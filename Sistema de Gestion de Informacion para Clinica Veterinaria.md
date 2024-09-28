@@ -122,13 +122,28 @@ En el contexto de la clínica veterinaria, la optimización de consultas a trav�
 - **Escalabilidad:** Facilitan el manejo de grandes volúmenes de datos. A medida que la clínica crece y se acumulan más registros, los índices aseguran que las consultas sigan siendo rápidas y eficientes.
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA 
+El proyecto lo llevamos a cabo mediante la búsqueda individual de información respecto al funcionamiento de bases de datos en clínicas veterinarias para así tener un mejor panorama a la hora de realizar las reuniones tanto virtuales como presenciales, donde expusimos nuestras ideas y posibles problemas que pudieran surgir a medida que avanzara el proyecto.
 
+### **Cómo se realizó el Trabajo Práctico**
+Realizamos el diagrama de relación-entidad y nos dividimos en partes equitativas la investigación acerca de las diferentes técnicas de trabajo (manejo de permisos, procedimientos y funciones almacenadas, optimización de consultas a través de índices, etc.) y el desarrollo de las mismas.<br>
 
- **a) Cómo se realizó el Trabajo Práctico**
-Vestibulum rutrum feugiat molestie. Nunc id varius augue. Ut augue mauris, venenatis et lacus ut, mattis blandit urna. Fusce lobortis, quam non vehicula scelerisque, nisi enim ultrices diam, ac tristique libero ex nec orci.
+Fuimos proponiendo distintas fechas de reuniones para ir compartiendo lo desarrollado y acoplando las distintas partes del proyecto. Esto lo hicimos de manera virtual para tener una mejor visión del código y la búsqueda de información.<br>
 
- **b) Herramientas (Instrumentos y procedimientos)**
-Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luctus sed fringilla non, ullamcorper at eros. Integer interdum id orci id rutrum. Curabitur facilisis lorem sed metus interdum accumsan. 
+El informe lo realizamos entre todos ya que fuimos aportando ideas y uniendo lo investigado, así como la carga de datos, ya que contiene muchas claves foráneas y se hacía imposible ir viendo los errores ya que algunas tablas dependen de otras.<br>
+
+### **Herramientas (Instrumentos y procedimientos)**
+Para llevar a cabo este proyecto, utilizamos una variedad de herramientas que facilitaron la comunicación, la investigación, el desarrollo y la documentación. A continuación, se detallan las principales herramientas empleadas:<br>
+
+**WhatsApp:** Utilizamos esta aplicación de mensajería para coordinar rápidamente las reuniones y compartir información de manera ágil entre los miembros del equipo.
+**YouTube:** Consultamos tutoriales y videos educativos para aprender sobre técnicas específicas de manejo de bases de datos y optimización de consultas.
+**Google Meet:** Realizamos reuniones virtuales a través de esta plataforma, lo que nos permitió discutir avances, resolver dudas y planificar las siguientes etapas del proyecto.
+**GitHub:** Utilizamos esta plataforma para el control de versiones y la colaboración en el desarrollo del código. Nos permitió mantener un historial de cambios y trabajar de manera conjunta en el proyecto.
+**Google:** Fue nuestra principal herramienta de búsqueda para encontrar información relevante, artículos académicos y ejemplos prácticos relacionados con el diseño y gestión de bases de datos.
+**SQL Server Management Studio:** Esta herramienta fue fundamental para la creación, gestión y optimización de la base de datos de la clínica veterinaria.
+**Microsoft Word:** Utilizamos Word para la redacción y edición del informe final del proyecto, asegurando una presentación clara y profesional.
+**Visual Studio:** Empleamos este entorno de desarrollo integrado (IDE) para escribir y probar el código SQL, así como para desarrollar procedimientos y funciones almacenadas.
+**Herramientas online de IA:** Utilizamos diversas herramientas de inteligencia artificial disponibles en línea para obtener sugerencias y optimizar el código, así como para resolver problemas específicos que surgieron durante el desarrollo del proyecto.
+
 
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 

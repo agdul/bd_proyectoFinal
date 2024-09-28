@@ -58,7 +58,7 @@ que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 
 **Definicion del Problema:** La clínica veterinaria necesita una solución para gestionar eficientemente la información de sus pacientes, dueños, citas médicas y tratamientos.<br>
 
-### *Objetivo del Trabajo Práctico*
+### *Objetivo del Trabajo Práctico (qué se va a hacer)*
 **Objetivo General:** Desarrollar una base de datos que permita la gestión integral de la información en una clínica veterinaria.<br>
 **Objetivos Específicos:**
 - Implementar el manejo de permisos a nivel de usuarios.

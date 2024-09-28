@@ -61,7 +61,7 @@ que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 ### *Objetivo del Trabajo Práctico*
 **Objetivo General:** Desarrollar una base de datos que permita la gestión integral de la información en una clínica veterinaria.<br>
 **Objetivos Específicos:**
-- Implementar el manejo de permisos a nivel de usuarios.<br>
+- Implementar el manejo de permisos a nivel de usuarios.
 - Crear procedimientos y funciones almacenadas para la gestión de datos.<br>
 - Optimizar consultas mediante el uso de índices.<br>
 
@@ -82,6 +82,18 @@ que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
+### **TEMA 1: Manejo de Permisos a Nivel de Usuarios** 
+### *¿Qué es?*
+El manejo de permisos a nivel de usuario en una base de datos implica la asignación de derechos y privilegios específicos a diferentes usuarios o roles dentro del sistema. Estos permisos determinan qué acciones pueden realizar los usuarios, como leer, escribir, actualizar o eliminar datos. Por ejemplo, un administrador puede tener permisos completos, mientras que un recepcionista solo puede registrar citas y actualizar información de contacto de los dueños.<br>
+
+### *Importancia y Uso*
+En el contexto de la clínica veterinaria, el manejo de permisos a nivel de usuario es crucial por varias razones:<br>
+
+- **Seguridad:** Al asignar permisos específicos, se protege la integridad y confidencialidad de la información. Solo los usuarios autorizados pueden acceder a datos sensibles, como historiales médicos de las mascotas o información personal de los dueños.
+- **Control de Acceso:** Permite definir claramente quién puede realizar ciertas acciones dentro de la base de datos. Por ejemplo, solo los veterinarios pueden actualizar los registros de tratamientos y diagnósticos, mientras que el personal administrativo puede gestionar las citas y la información de contacto.
+- **Prevención de Errores:** Al limitar los permisos, se reduce el riesgo de errores accidentales. Por ejemplo, un usuario con permisos limitados no podrá eliminar registros importantes por error.
+- **Auditoría y Cumplimiento:** Facilita el seguimiento de las acciones realizadas por cada usuario, lo que es esencial para auditorías y para cumplir con regulaciones de privacidad y protección de datos.
+
 ### **TEMA 2: Procedimientos y Funciones Almacenadas** 
 ### *¿Qué son?*
 - **Procedimientos Almacenados:** Son bloques de código SQL que se guardan en la base de datos y se pueden ejecutar múltiples veces. Por ejemplo, puedes tener un procedimiento que registre una nueva cita médica para una mascota.
@@ -98,8 +110,7 @@ En el contexto de la clínica veterinaria, los procedimientos y funciones almace
 
 Los procedimientos y funciones almacenadas son herramientas poderosas en la gestión de bases de datos. En una clínica veterinaria, su implementación no solo optimiza el manejo de datos, sino que también mejora la seguridad y el mantenimiento de la información crítica sobre mascotas, dueños, citas y tratamientos. Al utilizarlas, puedes asegurar un sistema de gestión más eficiente y confiable.
 
-**TEMA 2 " ----- "** 
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
 
 ...
 

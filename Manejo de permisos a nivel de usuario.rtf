@@ -1,0 +1,81 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang3082{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang10 Iformacion a Tratar\par
+1- \b0 Tipos de Permisos (a nivel de objeto, esquema, servidor, columna y fila).\par
+\b 2- \b0 Roles y Usuarios (creaci\'f3n y asignaci\'f3n de permisos mediante roles).\par
+\b 3- \b0 Comandos Clave (GRANT, REVOKE, creaci\'f3n de roles).\par
+\b 4- \b0 Permisos Granulares (a nivel de columna y fila).\par
+\b 5- \b0 Auditor\'eda de Accesos (monitoreo y registro de accesos a la base de datos).\par
+\b 6- \b0 Buenas Pr\'e1cticas (principio de menor privilegio, revisiones peri\'f3dicas, uso de roles).\b\par
+Manejo de Permisos a Nivel de Usuarios\b0\par
+El manejo de permisos a nivel de usuarios en bases de datos es una pr\'e1ctica cr\'edtica que permite controlar qui\'e9n puede acceder, modificar o gestionar los datos de acuerdo con su rol dentro de un sistema. En el caso de la base de datos veterinaria_db, que gestiona informaci\'f3n sensible como la de los due\'f1os de mascotas, las citas m\'e9dicas, y los tratamientos, una correcta configuraci\'f3n de permisos garantiza que solo los usuarios con las autorizaciones necesarias puedan acceder a informaci\'f3n espec\'edfica o realizar ciertas operaciones.\par
+\b Clasificaci\'f3n de los Permisos\b0\par
+
+\pard\sa200\sl276\slmult1 En un sistema de base de datos, los permisos se pueden clasificar en distintos niveles:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b Permisos a nivel de objeto: \b0 Estos permisos se aplican a tablas, vistas, procedimientos almacenados, y otros objetos de la base de datos. A los usuarios se les puede otorgar permisos para ejecutar ciertas operaciones como:\par
+
+\pard\sa200\sl276\slmult1\b               SELECT: \b0 Leer datos.\par
+\b               INSERT: \b0 Insertar nuevos datos.\par
+\b               UPDATE: \b0 Modificar los datos existentes.\par
+\b               DELETE: \b0 Eliminar registros.\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b Permisos a nivel de esquema: \b0 Permiten a un usuario ejecutar acciones en todos los objetos de un esquema particular. Esto puede ser \'fatil cuando se desea dar acceso a un grupo completo de tablas o procedimientos que pertenezcan a un esquema dentro de la base de datos.\par
+{\pntext\f1\'B7\tab}\b Permisos a nivel de servidor: \b0 En sistemas grandes, algunos usuarios necesitan permisos que abarcan m\'e1s de una base de datos. Esto se maneja con permisos a nivel de servidor, que incluyen acceso a m\'faltiples bases de datos o instancias.\par
+{\pntext\f1\'B7\tab}\b Permisos de ejecuci\'f3n: \b0 Aplican a procedimientos y funciones almacenadas. Permiten que los usuarios puedan ejecutar ciertos procedimientos sin acceso directo a las tablas.\par
+
+\pard\sa200\sl276\slmult1\b Roles de Usuario\b0\par
+En lugar de asignar permisos de manera individual a cada usuario, un enfoque com\'fan es la creaci\'f3n de roles. Un rol es un conjunto de permisos predefinidos que pueden asignarse a uno o varios usuarios, facilitando la administraci\'f3n de los accesos. Por ejemplo, en veterinaria_db se podr\'edan crear roles para diferentes tipos de usuarios:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b Rol de Veterinario:\b0  Tendr\'eda permisos para gestionar las tablas relacionadas con las citas m\'e9dicas y tratamientos, pero no acceso a la informaci\'f3n administrativa como la tabla due\'f1o.\par
+{\pntext\f1\'B7\tab}\b Rol de Administrador: \b0 Tendr\'eda acceso completo para gestionar todos los objetos en la base de datos.\par
+{\pntext\f1\'B7\tab}\b Rol de Asistente: \b0 Un rol limitado a la lectura de los datos de las mascotas y la creaci\'f3n de registros en algunas tablas, pero con restricciones estrictas sobre los cambios en los datos m\'e9dicos o administrativos.\par
+
+\pard\sa200\sl276\slmult1\b Ejemplo pr\'e1ctico de creaci\'f3n de roles:\par
+\b0 -- Crear un rol para los veterinarios\par
+CREATE ROLE rol_veterinario;\par
+-- Asignar permisos a este rol\par
+GRANT SELECT, INSERT ON CitasMedica TO rol_veterinario;\par
+GRANT SELECT ON Mascota TO rol_veterinario;\par
+-- Asignar el rol a un usuario espec\'edfico\par
+EXEC sp_addrolemember 'rol_veterinario', 'veterinario1';\par
+\b Permisos Granulares\b0\par
+Los permisos tambi\'e9n se pueden aplicar de manera m\'e1s granular para controlar acciones dentro de una misma tabla. Esto es particularmente \'fatil si se quiere, por ejemplo, limitar el acceso a solo ciertas columnas o filas de la tabla:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b Permisos a nivel de columna: \b0 Un usuario podr\'eda tener acceso a consultar solo algunas columnas de una tabla. Por ejemplo, en la tabla due\'f1o, un asistente podr\'eda tener permiso para ver el nombre_due\'f1o y telefono_due\'f1o, pero no los datos de contacto como el correo electr\'f3nico.\par
+
+\pard\sa200\sl276\slmult1\b          Ejemplo:\b0\par
+        GRANT SELECT (nombre_due\'f1o, telefono_due\'f1o) ON due\'f1o TO asistente;\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b Permisos a nivel de fila: \b0 Esto implica la restricci\'f3n de acceso a ciertos registros de una tabla, por ejemplo, para que un veterinario solo pueda ver las citas de las mascotas que ha tratado.\par
+
+\pard\sa200\sl276\slmult1\b Auditor\'eda de Permisos\b0\par
+La auditor\'eda de permisos es un aspecto clave del manejo de seguridad en una base de datos. Ayuda a monitorear qui\'e9n ha accedido a qu\'e9 datos y cu\'e1ndo. Esto es importante para garantizar que los usuarios no est\'e9n accediendo a informaci\'f3n fuera de sus permisos.\par
+Auditor\'eda de Accesos:\par
+-- Ejemplo de creaci\'f3n de auditor\'eda en SQL Server\par
+CREATE SERVER AUDIT MiAuditoria\par
+TO FILE (FILEPATH = 'C:\\Auditorias\\');\par
+ALTER SERVER AUDIT MiAuditoria WITH (STATE = ON);\par
+\par
+CREATE DATABASE AUDIT SPECIFICATION MiEspecificacionAuditoria\par
+FOR SERVER AUDIT MiAuditoria\par
+ADD (SELECT ON OBJECT::CitasMedica BY veterinario);\par
+ALTER DATABASE AUDIT SPECIFICATION MiEspecificacionAuditoria WITH (STATE = ON);\par
+Esto permitir\'e1 registrar todos los accesos a la tabla CitasMedica por parte del usuario veterinario.\par
+\b Beneficios de una Gesti\'f3n de Permisos Eficiente\b0\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b Seguridad y confidencialidad: \b0 Protege los datos sensibles como la informaci\'f3n personal de los due\'f1os de mascotas, los registros de tratamientos m\'e9dicos, etc.\par
+{\pntext\f1\'B7\tab}\b Mantenimiento m\'e1s sencillo: \b0 Los administradores pueden gestionar f\'e1cilmente los permisos a trav\'e9s de roles sin tener que otorgar o revocar permisos a cada usuario individualmente.\par
+{\pntext\f1\'B7\tab}\b Prevenci\'f3n de errores: \b0 Limitar los accesos minimiza el riesgo de que los usuarios modifiquen accidentalmente datos que no deber\'edan.\par
+{\pntext\f1\'B7\tab}\b Cumplimiento normativo: \b0 Un sistema con control de permisos puede cumplir mejor con regulaciones sobre privacidad y protecci\'f3n de datos.\par
+
+\pard\sa200\sl276\slmult1\b Buenas Pr\'e1cticas en la Gesti\'f3n de Permisos\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Principio del menor privilegio: \b0 Otorgar solo los permisos necesarios que un usuario necesita para realizar su trabajo. Esto reduce el riesgo de errores o abusos.\par
+{\pntext\f1\'B7\tab}\b Revisiones peri\'f3dicas: \b0 Realizar auditor\'edas peri\'f3dicas para revisar qu\'e9 usuarios tienen acceso a qu\'e9 datos y ajustar los permisos cuando sea necesario.\par
+{\pntext\f1\'B7\tab}\b Uso de roles: \b0 Evitar la asignaci\'f3n de permisos directos a los usuarios individuales; en su lugar, utilizar roles que faciliten la gesti\'f3n centralizada de permisos.\par
+{\pntext\f1\'B7\tab}\b Pol\'edticas de acceso basado en roles: \b0 Asignar los permisos seg\'fan las responsabilidades del puesto en lugar de las personas individuales.\par
+
+\pard\sa200\sl276\slmult1 En resumen, una correcta gesti\'f3n de los permisos en veterinaria_db no solo garantiza la seguridad y privacidad de los datos, sino que tambi\'e9n optimiza la eficiencia administrativa y asegura un acceso controlado y regulado por roles y pol\'edticas establecidas.\par
+}
+ 

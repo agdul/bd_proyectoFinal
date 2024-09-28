@@ -73,7 +73,7 @@ que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 - *Tratamientos:* Nombre del tratamiento, duración, medicamentos indicados, indicaciones relevantes, asociado a una cita.
 - *Medicamentos:* Nombre comercial, monodroga, presentación, laboratorio.
 
-**Objetivos:**<br>
+**Alcance**<br>
 - Mejorar la organización y acceso a la información de mascotas y dueños.<br>
 - Facilitar el registro y seguimiento de citas médicas y tratamientos.<br>
 - Asegurar la integridad y seguridad de los datos.<br>

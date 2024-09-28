@@ -21,7 +21,7 @@
 - **Capítulo VI:** Bibliografía
 
 ## CAPÍTULO I: INTRODUCCIÓN
-### Caso de estudio
+### *Caso de estudio*
 
 Una clínica veterinaria desea implementar una base de datos para gestionar la información de
 sus pacientes (mascotas), dueños, citas médicas y tratamientos.<br>
@@ -55,24 +55,24 @@ Se deben considerar las siguientes restricciones en el diseño físico:<br>
 - Se debe registrar en forma automática la fecha del sistema y usuario de base de datos
 que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 
-### Tema: 
-Implementacion de una Base de datos para la Gestion de una Clinica Veterinaria.<br>
+### Tema: Implementacion de una Base de datos para la Gestion de una Clinica Veterinaria.
+
 **Definicion del Problema:** La clínica veterinaria necesita una solución para gestionar eficientemente la información de sus pacientes, dueños, citas médicas y tratamientos.<br>
-### Objetivo del Trabajo Práctico:
+
+### *Objetivo del Trabajo Práctico:*
 **Objetivo General:** Desarrollar una base de datos que permita la gestión integral de la información en una clínica veterinaria.<br>
 **Objetivos Específicos:**<br>
-Implementar el manejo de permisos a nivel de usuarios.<br>
-Crear procedimientos y funciones almacenadas para la gestión de datos.<br>
-Optimizar consultas mediante el uso de índices.<br>
-
+- Implementar el manejo de permisos a nivel de usuarios.<br>
+- Crear procedimientos y funciones almacenadas para la gestión de datos.<br>
+- Optimizar consultas mediante el uso de índices.<br>
 
 **Requisitos:**<br>
-- <u>Mascotas:</u> Código único, nombre, especie, raza, fecha de nacimiento, peso, condiciones médicas especiales.
-- <u>Dueños:</u> Número de identificación único, DNI, nombre, dirección, teléfono, correo electrónico.
-- <u>Citas Médicas:</u> Motivo de la cita, veterinario asignado, observaciones, asociada a una mascota y un veterinario.
-- <u>Veterinarios:</u> Número de licencia profesional, nombre completo, especialidad, horario de atención.
-- <u>Tratamientos:</u> Nombre del tratamiento, duración, medicamentos indicados, indicaciones relevantes, asociado a una cita.
-- <u>Medicamentos:</u> Nombre comercial, monodroga, presentación, laboratorio.
+- *Mascotas:* Código único, nombre, especie, raza, fecha de nacimiento, peso, condiciones médicas especiales.
+- *Dueños Número:* de identificación único, DNI, nombre, dirección, teléfono, correo electrónico.
+- *Citas Médicas:* Motivo de la cita, veterinario asignado, observaciones, asociada a una mascota y un veterinario.
+- *Veterinarios:* Número de licencia profesional, nombre completo, especialidad, horario de atención.
+- *Tratamientos:* Nombre del tratamiento, duración, medicamentos indicados, indicaciones relevantes, asociado a una cita.
+- *Medicamentos:* Nombre comercial, monodroga, presentación, laboratorio.
 
 **Objetivos:**<br>
 - Mejorar la organización y acceso a la información de mascotas y dueños.<br>
@@ -83,8 +83,19 @@ Optimizar consultas mediante el uso de índices.<br>
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-**TEMA 1 " ---- "** 
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+**TEMA 1: Procedimientos y Funciones Almacenadas** 
+### *¿Qué son?*
+- **Procedimientos Almacenados:** Son bloques de código SQL que se guardan en la base de datos y se pueden ejecutar múltiples veces. Por ejemplo, puedes tener un procedimiento que registre una nueva cita médica para una mascota.
+
+- **Funciones Almacenadas:** Son similares a los procedimientos, pero su propósito principal es devolver un valor. Por ejemplo, puedes tener una función que calcule la edad de una mascota a partir de su fecha de nacimiento.
+
+### *Importancia y Uso*
+En el contexto de la clínica veterinaria, los procedimientos y funciones almacenadas ofrecen varias ventajas:
+- **Eficiencia:** Permiten ejecutar operaciones complejas de manera rápida y repetitiva sin necesidad de reescribir código. Por ejemplo, un procedimiento puede registrar automáticamente una cita y asociarla a la mascota y al veterinario correspondiente.
+
+- **Seguridad:** Se pueden otorgar permisos específicos a los usuarios para ejecutar estos procedimientos y funciones, manteniendo la integridad de la base de datos. Así, el personal puede registrar citas sin tener acceso completo a toda la base de datos.
+
+- **Mantenimiento:** Facilitan el mantenimiento del código. Si se necesita realizar un cambio en la forma en que se registra una cita, solo hay que actualizar el procedimiento almacenado una vez, en lugar de cambiar cada consulta SQL que se use en la aplicación.
 
 
 **TEMA 2 " ----- "** 

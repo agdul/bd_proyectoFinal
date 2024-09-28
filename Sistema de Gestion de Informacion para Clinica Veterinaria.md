@@ -1,4 +1,3 @@
-# Proyecto de Estudio!
 
 # PRESENTACIÓN: Sistema de Gestion de Informacion para Clinica Veterinaria
 
@@ -59,16 +58,16 @@ que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 
 **Definicion del Problema:** La clínica veterinaria necesita una solución para gestionar eficientemente la información de sus pacientes, dueños, citas médicas y tratamientos.<br>
 
-### *Objetivo del Trabajo Práctico:*
+### *Objetivo del Trabajo Práctico*
 **Objetivo General:** Desarrollar una base de datos que permita la gestión integral de la información en una clínica veterinaria.<br>
-**Objetivos Específicos:**<br>
+**Objetivos Específicos:**
 - Implementar el manejo de permisos a nivel de usuarios.<br>
 - Crear procedimientos y funciones almacenadas para la gestión de datos.<br>
 - Optimizar consultas mediante el uso de índices.<br>
 
 **Requisitos:**<br>
 - *Mascotas:* Código único, nombre, especie, raza, fecha de nacimiento, peso, condiciones médicas especiales.
-- *Dueños Número:* de identificación único, DNI, nombre, dirección, teléfono, correo electrónico.
+- *Dueños:* Número de identificación único, DNI, nombre, dirección, teléfono, correo electrónico.
 - *Citas Médicas:* Motivo de la cita, veterinario asignado, observaciones, asociada a una mascota y un veterinario.
 - *Veterinarios:* Número de licencia profesional, nombre completo, especialidad, horario de atención.
 - *Tratamientos:* Nombre del tratamiento, duración, medicamentos indicados, indicaciones relevantes, asociado a una cita.
@@ -83,7 +82,7 @@ que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-**TEMA 1: Procedimientos y Funciones Almacenadas** 
+### **TEMA 2: Procedimientos y Funciones Almacenadas** 
 ### *¿Qué son?*
 - **Procedimientos Almacenados:** Son bloques de código SQL que se guardan en la base de datos y se pueden ejecutar múltiples veces. Por ejemplo, puedes tener un procedimiento que registre una nueva cita médica para una mascota.
 
@@ -95,8 +94,9 @@ En el contexto de la clínica veterinaria, los procedimientos y funciones almace
 
 - **Seguridad:** Se pueden otorgar permisos específicos a los usuarios para ejecutar estos procedimientos y funciones, manteniendo la integridad de la base de datos. Así, el personal puede registrar citas sin tener acceso completo a toda la base de datos.
 
-- **Mantenimiento:** Facilitan el mantenimiento del código. Si se necesita realizar un cambio en la forma en que se registra una cita, solo hay que actualizar el procedimiento almacenado una vez, en lugar de cambiar cada consulta SQL que se use en la aplicación.
+- **Mantenimiento:** Facilitan el mantenimiento del código. Si se necesita realizar un cambio en la forma en que se registra una cita, solo hay que actualizar el procedimiento almacenado una vez, en lugar de cambiar cada consulta SQL que se use en la aplicación.<br>
 
+Los procedimientos y funciones almacenadas son herramientas poderosas en la gestión de bases de datos. En una clínica veterinaria, su implementación no solo optimiza el manejo de datos, sino que también mejora la seguridad y el mantenimiento de la información crítica sobre mascotas, dueños, citas y tratamientos. Al utilizarlas, puedes asegurar un sistema de gestión más eficiente y confiable.
 
 **TEMA 2 " ----- "** 
 Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.

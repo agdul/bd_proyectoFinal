@@ -1,8 +1,6 @@
 # Proyecto de Estudio!
-    
-**Estructura del documento principal:**
 
-# PRESENTACIÓN (Título/Nombre Proyecto)
+# PRESENTACIÓN: Sistema de Gestion de Informacion para Clinica Veterinaria
 
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
@@ -14,8 +12,15 @@
 
 **Año**: 2024
 
-## CAPÍTULO I: INTRODUCCIÓN
+# Indice
+- **Capítulo I:** Introducción
+- **Capítulo II:** Marco Conceptual o Referencial
+- **Capítulo III:** Metodología
+- **Capítulo IV:** Desarrollo del Tema/Resultados
+- **Capítulo V:** Conclusiones
+- **Capítulo VI:** Bibliografía
 
+## CAPÍTULO I: INTRODUCCIÓN
 ### Caso de estudio
 
 Una clínica veterinaria desea implementar una base de datos para gestionar la información de
@@ -42,10 +47,39 @@ tratamiento, duración, Medicamentos indicados y cualquier otra indicación rele
 - De los medicamentos se necesita conocer: Nombre comercial, monodroga, presentación
 y laboratorio que lo comercializa.<br>
 
+Se deben considerar las siguientes restricciones en el diseño físico:<br>
+- La longitud del campo ‘dni’ debe ser igual o menor a 8 caracteres<br>
+- El campo ‘correo_electronico’ debe ser un valor único.<br>
+- El campo ‘fecha’ por defecto toma la fecha actual.<br>
+- La edad de la mascota no puede superar los 30 años.<br>
+- Se debe registrar en forma automática la fecha del sistema y usuario de base de datos
+que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 
-### Definición o planteamiento del problema
+### Tema: 
+Implementacion de una Base de datos para la Gestion de una Clinica Veterinaria.<br>
+**Definicion del Problema:** La clínica veterinaria necesita una solución para gestionar eficientemente la información de sus pacientes, dueños, citas médicas y tratamientos.<br>
+### Objetivo del Trabajo Práctico:
+**Objetivo General:** Desarrollar una base de datos que permita la gestión integral de la información en una clínica veterinaria.<br>
+**Objetivos Específicos:**<br>
+Implementar el manejo de permisos a nivel de usuarios.<br>
+Crear procedimientos y funciones almacenadas para la gestión de datos.<br>
+Optimizar consultas mediante el uso de índices.<br>
 
-Pellentesque interdum aliquam magna sit amet rutrum. Nulla aliquam ligula nec quam iaculis dictum. In cursus aliquam cursus. Nullam a sem vel sapien iaculis finibus. Donec aliquam dictum viverra. Etiam ut orci lacus.
+
+**Requisitos:**<br>
+- <u>Mascotas:</u> Código único, nombre, especie, raza, fecha de nacimiento, peso, condiciones médicas especiales.
+- <u>Dueños:</u> Número de identificación único, DNI, nombre, dirección, teléfono, correo electrónico.
+- <u>Citas Médicas:</u> Motivo de la cita, veterinario asignado, observaciones, asociada a una mascota y un veterinario.
+- <u>Veterinarios:</u> Número de licencia profesional, nombre completo, especialidad, horario de atención.
+- <u>Tratamientos:</u> Nombre del tratamiento, duración, medicamentos indicados, indicaciones relevantes, asociado a una cita.
+- <u>Medicamentos:</u> Nombre comercial, monodroga, presentación, laboratorio.
+
+**Objetivos:**<br>
+- Mejorar la organización y acceso a la información de mascotas y dueños.<br>
+- Facilitar el registro y seguimiento de citas médicas y tratamientos.<br>
+- Asegurar la integridad y seguridad de los datos.<br>
+
+
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 

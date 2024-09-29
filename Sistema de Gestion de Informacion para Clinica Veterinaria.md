@@ -152,11 +152,11 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 
 
 ### Diagrama relacional
-![diagrama_relacional](https://github.com/dovillegas/basesdatos_proyecto_estudio/blob/main/doc/image_relational.png)
+![diagrama_relacional](https://github.com/agdul/bd_proyectoFinal/blob/main/doc/Modelo_Relacional_veterinaria.png)
 
 ### Diccionario de datos
 
-Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
+Acceso al documento [PDF](doc/Diccionario_datos_Veterinaria.pdf) del diccionario de datos.
 
 
 ### Desarrollo TEMA 1 "----"

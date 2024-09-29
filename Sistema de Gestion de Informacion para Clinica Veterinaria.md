@@ -142,13 +142,15 @@ Para llevar a cabo este proyecto, utilizamos una variedad de herramientas que fa
 **SQL Server Management Studio:** Esta herramienta fue fundamental para la creación, gestión y optimización de la base de datos de la clínica veterinaria.<br>
 **Microsoft Word:** Utilizamos Word para la redacción y edición del informe final del proyecto, asegurando una presentación clara y profesional.<br>
 **Visual Studio:** Empleamos este entorno de desarrollo integrado (IDE) para escribir y probar el código SQL, así como para desarrollar procedimientos y funciones almacenadas.<br>
+**MySQL - XAMPP:** Utilizamos XAMPP, una distribución de Apache fácil de instalar. Importamos el código SQL en MySQL a través de XAMPP para generar el diccionario de datos, lo que facilitó la organización y documentación de la estructura de la base de datos.<br>
 **Herramientas online de IA:** Utilizamos diversas herramientas de inteligencia artificial disponibles en línea para obtener sugerencias y optimizar el código, así como para resolver problemas específicos que surgieron durante el desarrollo del proyecto.<br>
 
 
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
-Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris tortor nisl, ultricies ac scelerisque nec, feugiat in nibh. Pellentesque interdum aliquam magna sit amet rutrum. 
+Diseñamos el modelo relacional para el sistema: Gestión Veterinaria.
+Este modelo captura la estructura básica de un sistema para registrar información sobre dueños, mascotas, citas veterinarias, tratamientos y medicamentos utilizado en la clínica veterinaria.
 
 
 ### Diagrama relacional

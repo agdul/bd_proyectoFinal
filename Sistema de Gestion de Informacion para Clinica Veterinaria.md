@@ -149,7 +149,7 @@ Para llevar a cabo este proyecto, utilizamos una variedad de herramientas que fa
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
-Diseñamos el modelo relacional para el sistema: Gestión Veterinaria.
+Diseño del modelo relacional para el sistema: Gestión Veterinaria.<br>
 Este modelo captura la estructura básica de un sistema para registrar información sobre dueños, mascotas, citas veterinarias, tratamientos y medicamentos utilizado en la clínica veterinaria.
 
 

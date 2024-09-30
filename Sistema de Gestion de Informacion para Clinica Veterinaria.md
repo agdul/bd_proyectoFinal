@@ -181,7 +181,7 @@ Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vi
 
 
 
-## BIBLIOGRAFÍA DE CONSULTA
+## CAPÍTULO VI: BIBLIOGRAFÍA
 
  1. List item
  2. List item

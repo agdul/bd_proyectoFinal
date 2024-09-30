@@ -174,6 +174,9 @@ Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas 
 
 ### Desarrollo TEMA 3: Optimización de Consultas a través de Índices
 
+Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum. 
+
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/tema03_nombre_tema)
 
 ## CAPÍTULO V: CONCLUSIONES
 

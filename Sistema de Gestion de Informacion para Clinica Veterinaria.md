@@ -79,8 +79,7 @@ que crean los registros de citas. Agregar estos dos campos a la tabla.<br>
 - Asegurar la integridad y seguridad de los datos.<br>
 
 
-
-## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
+## CAPÍTULO II: MARCO CONCEPTUAL O REFERENCIAL
 
 ### **TEMA 1: Manejo de Permisos a Nivel de Usuarios** 
 ### *¿Qué es?*
@@ -121,7 +120,7 @@ En el contexto de la clínica veterinaria, la optimización de consultas a trav�
 - **Eficiencia:** Reducen el tiempo de respuesta de las consultas, lo que es crucial para operaciones en tiempo real. Esto es particularmente importante en la clínica veterinaria, donde el personal necesita acceder rápidamente a la información de las mascotas y sus tratamientos.
 - **Escalabilidad:** Facilitan el manejo de grandes volúmenes de datos. A medida que la clínica crece y se acumulan más registros, los índices aseguran que las consultas sigan siendo rápidas y eficientes.
 
-## CAPÍTULO III: METODOLOGÍA SEGUIDA 
+## CAPÍTULO III: METODOLOGÍA SEGUIDA
 El proyecto lo llevamos a cabo mediante la búsqueda individual de información respecto al funcionamiento de bases de datos en clínicas veterinarias para así tener un mejor panorama a la hora de realizar las reuniones tanto virtuales como presenciales, donde expusimos nuestras ideas y posibles problemas que pudieran surgir a medida que avanzara el proyecto.
 
 ### **Cómo se realizó el Trabajo Práctico**
@@ -147,7 +146,7 @@ Para llevar a cabo este proyecto, utilizamos una variedad de herramientas que fa
 
 
 
-## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
+## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS
 
 ### Diseño del modelo relacional para el sistema: Gestión Veterinaria.<br>
 Este modelo captura la estructura básica de un sistema para registrar información sobre dueños, mascotas, citas veterinarias, tratamientos y medicamentos utilizado en la clínica veterinaria.

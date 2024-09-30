@@ -2,7 +2,7 @@ USE gestion_veterinaria;
 
 GO;
 CREATE PROCEDURE InsertMascota
-	--Como validar los datos desde aquí?
+	--Como validar los datos desde aqui?
     @id_mascota INT,
     @nombre_mascota VARCHAR(10),
     @fecha_nacimiento DATE,

@@ -20,4 +20,4 @@ Este espacio propone presentar la información para organizar el desarrollo del 
     ->Sistema de Gestion de Informacion para Clinica Veterinaria.md (documento principal estructurado por capítulos)
     
 
--[Estructura del documento principal](Sistema_Gestion_Info_Clinica_Veterinaria)
+[Documento principal del Proyecto](https://github.com/agdul/bd_proyectoFinal/blob/main/Sistema_Gestion_Info_Clinica_Veterinaria.md)

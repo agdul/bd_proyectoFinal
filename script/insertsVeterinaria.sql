@@ -1,3 +1,5 @@
+USE gestion_veterinaria;
+
 -- Inserciones corregidas
 INSERT INTO Especie (id_especie, nombre_especie)
 VALUES (1, 'Canina'), (2, 'Felina');
@@ -5,15 +7,20 @@ VALUES (1, 'Canina'), (2, 'Felina');
 INSERT INTO Raza (id_raza, nombre_raza, id_especie)
 VALUES (1, 'Labrador', 1), (2, 'Persa', 2);
 
-SELECT * FROM Raza;
 
 INSERT INTO dueno (id_dueno, nombre_dueno, apellido_dueno, dni_dueno, telefono_dueno, email_dueno, direccion_dueno)
 VALUES 
-(1, 'Juan', 'P茅rez', '12345678', 1234567890, 'juan@example.com', 'Calle 123'),
-(2, 'Ana', 'Garc铆a', '87654321', 9876543210, 'ana@example.com', 'Avenida Siempre Viva 123');
+(1, 'Juan', 'P閞ez', '12345678', 1234567890, 'juan@example.com', 'Calle 123'),
+(2, 'Ana', 'Garc韆', '87654321', 9876543210, 'ana@example.com', 'Avenida Siempre Viva 123');
+
+INSERT INTO dueno(id_dueno, nombre_dueno, apellido_dueno, dni_dueno, telefono_dueno, email_dueno, direccion_dueno) VALUES
+(3, 'Maria', 'Romero', '31323421', 3795134019,'mariromero456@gmail.com', 'Barrio Las Mil Viviendas');
+
+INSERT INTO dueno(id_dueno, nombre_dueno, apellido_dueno, dni_dueno, telefono_dueno, email_dueno, direccion_dueno) VALUES
+(4, 'Mart韓', 'Juarez', '32431243', 3794134019,'martinjarz789@gmail.com', 'Barrio La Chola');
 
 INSERT INTO Especialidad (id_especialidad, nombre_especialidad)
-VALUES (1, 'Cirug铆a'), (2, 'Cardiolog铆a');
+VALUES (1, 'Cirug韆'), (2, 'Cardiolog韆');
 
 INSERT INTO Laboratorio (id_laboratorio, nombre_lab)
 VALUES (1, 'Laboratorios XYZ'), (2, 'Laboratorios ABC');
@@ -28,16 +35,16 @@ VALUES
 (1, 'Paracetamol', 'Paracetamol', 'Tableta', 1),
 (2, 'Ibuprofeno', 'Ibuprofeno', 'Jarabe', 2);
 
--- Inserci贸n con TIME para horas
+-- Inserci髇 con TIME para horas
 INSERT INTO Veterinario (id_veterinario, nro_licProfesional, nombre_profesional, hora_entrada, hora_salida, id_especialidad)
 VALUES 
 (1, 12345, 'Dr. Smith', '08:00', '16:00', 1),
-(2, 67890, 'Dra. L贸pez', '09:00', '17:00', 2);
+(2, 67890, 'Dra. L髉ez', '09:00', '17:00', 2);
 
 INSERT INTO CitasMedica (id_citaMedica, fecha_citaMedica, observaciones_citaMedica, usuario, motivo_visita, id_mascota, id_veterinario)
 VALUES 
-(1, GETDATE(), 'Revisi贸n general', USER_NAME(), 'Chequeo', 1, 1),
-(2, GETDATE(), 'Dolor de est贸mago', USER_NAME(), 'Consulta', 2, 2);
+(1, GETDATE(), 'Revisi髇 general', USER_NAME(), 'Chequeo', 1, 1),
+(2, GETDATE(), 'Dolor de est髆ago', USER_NAME(), 'Consulta', 2, 2);
 
 INSERT INTO Tratamiento (id_tratamiento, nombre_tratamiento, inicio_tratamiento, fin_tratamiento, id_citaMedica)
 VALUES 
@@ -48,6 +55,9 @@ INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento, id_citaMedi
 VALUES 
 (1, 1, 1),
 (2, 2, 2);
+
+EXEC InsertarMascota @id_mascota = 4, @nombre_mascota = 'FIRULAIS', @fecha_nacimiento = '2010-4-4', 
+@peso_mascota = 3.50, @condicion_mascota = 'Alergia', @id_dueno = 3, @id_raza = 2;
 
 SELECT * FROM Especie;
 SELECT * FROM Raza;

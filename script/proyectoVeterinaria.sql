@@ -24,7 +24,7 @@ CREATE TABLE dueno
   id_dueno INT NOT NULL,
   nombre_dueno VARCHAR(50) NOT NULL,
   apellido_dueno VARCHAR(50) NOT NULL,
-  dni_dueno VARCHAR(10) NOT NULL,
+  dni_dueno VARCHAR(8) NOT NULL,
   telefono_dueno BIGINT NOT NULL,  -- Cambio a BIGINT para evitar errores con números grandes
   email_dueno VARCHAR(50) NOT NULL,
   direccion_dueno VARCHAR(50) NOT NULL,
@@ -122,6 +122,11 @@ CREATE TABLE Tratamiento_medicamento
   CONSTRAINT FK_tratamiento_medicamento_id_tratamiento FOREIGN KEY (id_tratamiento, id_citaMedica) REFERENCES Tratamiento(id_tratamiento, id_citaMedica),
   CONSTRAINT FK_tratamiento_medicamento_id_citaMedica FOREIGN KEY (id_citaMedica) REFERENCES CitasMedica(id_citaMedica)
 );
+
+--MODIFICACIONES A LA TABLA DUENO
+
+ALTER TABLE Dueno ADD CONSTRAINT CK_dueno_dni CHECK (LEN(dni_dueno) = 8 AND ISNUMERIC(dni_dueno) = 1);
+
 -- Restricciones
 ALTER TABLE CitasMedica ADD CONSTRAINT DF_citasMedica_fecha_citamedica DEFAULT GETDATE() FOR fecha_citaMedica;
 
@@ -129,27 +134,6 @@ ALTER TABLE mascota
 ADD CONSTRAINT CK_mascota_fecha_nacimiento
 CHECK (fecha_nacimiento >= DATEADD(YEAR, -30, GETDATE()));
 
-ALTER TABLE CitasMedica 
-ADD CONSTRAINT DF_citasmedicas_usario 
-DEFAULT SYSTEM_USER 
-FOR usuario;
+ALTER TABLE CitasMedica ADD CONSTRAINT DF_citasmedicas_usario DEFAULT SYSTEM_USER FOR usuario;
 
 
--- Procedimientos y funciones
-CREATE PROCEDURE RegistrarCita
-    @MascotaID INT,
-    @VeterinarioID INT,
-    @Motivo VARCHAR(50),
-    @Observaciones VARCHAR(70)
-AS
-BEGIN
-    INSERT INTO CitasMedica (fecha_citaMedica, observaciones_citaMedica, usuario, motivo_visita, id_mascota, id_veterinario)
-    VALUES (GETDATE(), @Observaciones, USER_NAME(), @Motivo, @MascotaID, @VeterinarioID);
-END;
-
-CREATE FUNCTION CalcularEdadMascota(@FechaNacimiento DATE)
-RETURNS INT
-AS
-BEGIN
-    RETURN DATEDIFF(YEAR, @FechaNacimiento, GETDATE());
-END;

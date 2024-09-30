@@ -7,7 +7,6 @@ VALUES (1, 'Canina'), (2, 'Felina');
 INSERT INTO Raza (id_raza, nombre_raza, id_especie)
 VALUES (1, 'Labrador', 1), (2, 'Persa', 2);
 
-
 INSERT INTO dueno (id_dueno, nombre_dueno, apellido_dueno, dni_dueno, telefono_dueno, email_dueno, direccion_dueno)
 VALUES 
 (1, 'Juan', 'Perez', '12345678', 1234567890, 'juan@example.com', 'Calle 123'),
@@ -55,7 +54,6 @@ INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento, id_citaMedi
 VALUES 
 (1, 1, 1),
 (2, 2, 2);
-
 
 
 SELECT * FROM Especie;

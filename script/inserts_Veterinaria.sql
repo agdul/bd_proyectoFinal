@@ -1,4 +1,4 @@
-USE gestion_veterinaria;
+USE gestion_veterinaria; 
 
 -- Insertar especies de animales
 INSERT INTO Especie (nombre_especie) VALUES ('Canis lupus');       -- Lobo
@@ -638,17 +638,86 @@ SELECT * FROM Tratamiento_medicamento;
 
 -- Duplicar los datos
 
-INSERT INTO Especie (nombre_especie)  SELECT id_especie FROM Especie;
+INSERT INTO Especie (nombre_especie) SELECT nombre_especie FROM Especie;
+
 INSERT INTO Raza (nombre_raza) SELECT id_especie FROM Raza;
-INSERT INTO dueno (nombre_dueno) SELECT id_dueno FROM dueno;
-INSERT INTO Especialidad (nombre_especialidad) SELECT id_especialidad FROM Especialidad
-INSERT INTO Laboratorio (nombre_lab) SELECT id_laboratorio FROM Laboratorio;
-INSERT INTO Mascota (nombre_mascota, fecha_nacimiento) SELECT id_especie, id_raza, id_dueno, nombre FROM Mascota
 
+--ROW_NUMBER devuelve el número secuencial de una fila dentro de una partición de un conjunto de resultados
+--OVER : Espesifica que es un funcion de ventana
 
+-- With Tabla temporal donde colocas las variaciones que queres efectuar sobre la tabla dueno
+-- El from del Insert va ser sobre CTE (nomb_generico) y el ultimo modulo ni idea
 
+--inicio de la funcion duplicar dueno
+WITH CTE AS (
+    SELECT  nombre_dueno,
+            apellido_dueno, 
+            CAST(dni_dueno AS INT) + ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS nuevo_dni,
+            telefono_dueno + ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS nuevo_telefono,
+            CONCAT('correo', ROW_NUMBER() OVER (ORDER BY (SELECT NULL)), '@ejemplo.com') AS nuevo_email,
+            direccion_dueno 
+    FROM dueno
+)
+INSERT INTO dueno (nombre_dueno, apellido_dueno, dni_dueno, telefono_dueno, email_dueno, direccion_dueno)
+SELECT  nombre_dueno,
+        apellido_dueno, 
+        nuevo_dni, 
+        nuevo_telefono, 
+        nuevo_email, 
+        direccion_dueno 
+FROM CTE
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM dueno d 
+    WHERE d.telefono_dueno = CTE.nuevo_telefono
+       OR d.dni_dueno = CTE.nuevo_dni
+);
+--fin de la funcion duplicar dueno
 
+INSERT INTO Especialidad (nombre_especialidad) SELECT nombre_especialidad FROM Especialidad
 
+INSERT INTO Laboratorio (nombre_lab) SELECT nombre_lab FROM Laboratorio;
 
+INSERT INTO Mascota (nombre_mascota, fecha_nacimiento, peso_mascota, condicion_mascota, id_dueno, id_raza)
+SELECT nombre_mascota, fecha_nacimiento, peso_mascota, condicion_mascota, id_dueno, id_raza
+FROM Mascota;
 
+INSERT INTO Medicamento (nombre_comercial, monodroga_medic, presentacion_medic, id_laboratorio)
+SELECT nombre_comercial, monodroga_medic, presentacion_medic, id_laboratorio
+FROM Medicamento;
 
+--INICIO DE LA FUNCION DUPLICAR VET
+WITH CTE AS (
+    SELECT  nro_licProfesional + ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS nuevo_nro_licProfesional,
+            nombre_profesional,
+            hora_entrada,
+            hora_salida,
+            id_especialidad
+    FROM Veterinario
+)
+INSERT INTO Veterinario (nro_licProfesional, nombre_profesional, hora_entrada, hora_salida, id_especialidad)
+SELECT  nuevo_nro_licProfesional,
+        nombre_profesional,
+        hora_entrada,
+        hora_salida,
+        id_especialidad
+FROM CTE
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Veterinario v 
+    WHERE v.nro_licProfesional = CTE.nuevo_nro_licProfesional
+);
+
+--FIN DE LA FUNCION DUPLICAR VET
+
+INSERT INTO CitasMedica (fecha_citaMedica, observaciones_citaMedica, usuario, motivo_visita, id_mascota, id_veterinario)
+SELECT fecha_citaMedica, observaciones_citaMedica, usuario, motivo_visita, id_mascota, id_veterinario
+FROM CitasMedica;
+
+INSERT INTO Tratamiento (nombre_tratamiento, inicio_tratamiento, fin_tratamiento, id_citaMedica)
+SELECT nombre_tratamiento, inicio_tratamiento, fin_tratamiento, id_citaMedica
+FROM Tratamiento;
+
+INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento, id_citaMedica)
+SELECT id_medicamento, id_tratamiento, id_citaMedica
+FROM Tratamiento_medicamento;

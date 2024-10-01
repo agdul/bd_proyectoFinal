@@ -572,56 +572,56 @@ VALUES
 --Inserts de la tabla tratamiento_medicamento
 INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento, id_citaMedica)
 VALUES
-(1, 1, 1),
-(2, 1, 1),
-(3, 2, 2),
-(4, 2, 2),
-(5, 3, 3),
-(6, 4, 4),
-(7, 5, 5),
-(8, 6, 6),
-(9, 7, 7),
-(10, 8, 8),
-(11, 9, 9),
-(12, 10, 10),
-(13, 11, 11),
-(14, 12, 12),
-(15, 13, 13),
-(16, 14, 14),
-(17, 15, 15),
-(18, 16, 16),
-(19, 17, 17),
-(20, 18, 18),
-(21, 19, 19),
-(22, 20, 20),
-(23, 21, 21),
-(24, 22, 22),
-(25, 23, 23),
-(26, 24, 24),
-(27, 25, 25),
-(28, 26, 26),
-(29, 27, 27),
-(30, 28, 28),
-(31, 29, 29),
-(32, 30, 30),
-(33, 31, 31),
-(34, 32, 32),
-(35, 33, 33),
-(36, 34, 34),
-(37, 35, 35),
-(38, 36, 36),
-(39, 37, 37),
-(40, 38, 38),
-(41, 39, 39),
-(42, 40, 40),
-(43, 41, 41),
-(44, 42, 42),
-(45, 43, 43),
-(46, 44, 44),
-(47, 45, 45),
-(48, 46, 46),
-(49, 47, 47),
-(50, 48, 48);
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 2),
+(5, 3),
+(6, 4),
+(7, 5),
+(8, 6),
+(9, 7),
+(10, 8),
+(11, 9),
+(12, 10),
+(13, 11),
+(14, 12),
+(15, 13),
+(16, 14),
+(17, 15),
+(18, 16),
+(19, 17),
+(20, 18),
+(21, 19),
+(22, 20),
+(23, 21),
+(24, 22),
+(25, 23),
+(26, 24),
+(27, 25),
+(28, 26),
+(29, 27),
+(30, 28),
+(31, 29),
+(32, 30),
+(33, 31),
+(34, 32),
+(35, 33),
+(36, 34),
+(37, 35),
+(38, 36),
+(39, 37),
+(40, 38),
+(41, 39),
+(42, 40),
+(43, 41),
+(44, 42),
+(45, 43),
+(45, 44),
+(45, 45),
+(45, 46),
+(45, 47),
+(33, 48);
 
 -- Mostrar todos los registros de las tablas
 SELECT * FROM Especie;
@@ -640,7 +640,7 @@ SELECT * FROM Tratamiento_medicamento;
 
 INSERT INTO Especie (nombre_especie) SELECT nombre_especie FROM Especie;
 
-INSERT INTO Raza (nombre_raza) SELECT id_especie FROM Raza;
+INSERT INTO Raza (nombre_raza) SELECT nombre_raza FROM Raza;
 
 --ROW_NUMBER devuelve el número secuencial de una fila dentro de una partición de un conjunto de resultados
 --OVER : Espesifica que es un funcion de ventana
@@ -718,6 +718,30 @@ INSERT INTO Tratamiento (nombre_tratamiento, inicio_tratamiento, fin_tratamiento
 SELECT nombre_tratamiento, inicio_tratamiento, fin_tratamiento, id_citaMedica
 FROM Tratamiento;
 
-INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento, id_citaMedica)
-SELECT id_medicamento, id_tratamiento, id_citaMedica
-FROM Tratamiento_medicamento;
+-- Creacion de datos Tratamiento_medicamento
+
+-- Crear una tabla temporal para almacenar los pares de id_medicamento e id_tratamiento
+CREATE TABLE #TempTratamientoMedicamento (
+    id_medicamento INT,
+    id_tratamiento INT
+);
+
+-- Insertar combinaciones de id_medicamento e id_tratamiento
+INSERT INTO #TempTratamientoMedicamento (id_medicamento, id_tratamiento)
+SELECT m.id_medicamento, t.id_tratamiento
+FROM Medicamento m
+CROSS JOIN Tratamiento t;
+
+-- Insertar en la tabla Tratamiento_medicamento asegurando que no haya duplicados
+INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento)
+SELECT id_medicamento, id_tratamiento
+FROM #TempTratamientoMedicamento
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Tratamiento_medicamento tm 
+    WHERE tm.id_medicamento = #TempTratamientoMedicamento.id_medicamento
+      AND tm.id_tratamiento = #TempTratamientoMedicamento.id_tratamiento
+);
+
+-- Eliminar la tabla temporal
+DROP TABLE #TempTratamientoMedicamento;

@@ -81,3 +81,18 @@ El resultado sería algo así:
 Cada fila recibe un número secuencial único (1, 2, 3), sin importar el orden de las columnas.
 
 Espero que esto aclare el uso de `ORDER BY (SELECT NULL)`. Si tienes más preguntas o necesitas más detalles, ¡avísame!
+
+
+
+Tratamiento_Medicamento 
+
+Quieres insertar combinaciones de id_medicamento e id_tratamiento de manera que cada 
+medicamento se asocie con todos los tratamientos disponibles. 
+Aquí tienes un script que debería cumplir con tus requisitos:
+
+Explicación del Script
+Crear una tabla temporal: Se crea una tabla temporal #TempTratamientoMedicamento para almacenar las combinaciones de id_medicamento e id_tratamiento.
+Insertar combinaciones: Se utiliza un CROSS JOIN para generar todas las combinaciones posibles de id_medicamento e id_tratamiento y se insertan en la tabla temporal.
+Insertar en la tabla final: Se insertan las combinaciones en la tabla Tratamiento_medicamento, asegurando que no haya duplicados utilizando una cláusula WHERE NOT EXISTS.
+Eliminar la tabla temporal: Se elimina la tabla temporal #TempTratamientoMedicamento una vez que se han insertado los datos.
+Este script debería generar todas las combinaciones posibles de id_medicamento e id_tratamiento y asegurarse de que no se inserten duplicados en la tabla Tratamiento_medicamento.

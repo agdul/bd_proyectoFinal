@@ -570,7 +570,7 @@ VALUES
 
 
 --Inserts de la tabla tratamiento_medicamento
-INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento, id_citaMedica)
+INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento)
 VALUES
 (1, 1),
 (2, 2),

@@ -26,6 +26,8 @@ BEGIN
     WHERE id_mascota = @id;
 END;
 
+DROP PROCEDURE IF EXISTS InsertarEspecie;
+
 GO;
 CREATE PROCEDURE InsertarEspecie
     @id INT,
@@ -35,8 +37,8 @@ BEGIN
     INSERT INTO Especie (id_especie, nombre_especie)
     VALUES (@id, @nombre);
 END;
-
 GO;
+
 CREATE PROCEDURE InsertarRaza
     @id_raza INT,
     @nombre_raza VARCHAR(30),
@@ -145,7 +147,7 @@ CREATE PROCEDURE InsertarTratamientoMedicamento
     @id_citaMedica INT
 AS
 BEGIN
-    INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento, id_citaMedica)
+    INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento)
     VALUES (@id_medicamento, @id_tratamiento, @id_citaMedica);
 END;
 

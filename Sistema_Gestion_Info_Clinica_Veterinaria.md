@@ -160,20 +160,23 @@ Este modelo captura la estructura básica de un sistema para registrar informaci
 Acceso al documento [PDF](doc/Diccionario_datos_Veterinaria.pdf) del diccionario de datos.
 
 
-### Desarrollo TEMA 1 "----"
+### Desarrollo TEMA 1: Manejo de Permisos a Nivel de Usuarios
 
 Fusce auctor finibus lectus, in aliquam orci fermentum id. Fusce sagittis lacus ante, et sodales eros porta interdum. Donec sed lacus et eros condimentum posuere. 
 
 > Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
 
-### Desarrollo TEMA 2 "----"
+### Desarrollo TEMA 2: Procedimientos y Funciones Almacenadas
 
 Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum. 
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> Procedimientos y Funciones Almacenadas](script/tema02_procedimientosFuncionesAlmacenadas)
 
-... 
+### Desarrollo TEMA 3: Optimización de Consultas a través de Índices
 
+Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum. 
+
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/tema03_nombre_tema)
 
 ## CAPÍTULO V: CONCLUSIONES
 

@@ -15,4 +15,6 @@ Al tener datos de una misma columna juntos, se facilita la compresión de datos.
 Los índices columnares están diseñados para consultas de análisis (como SUM, AVG, COUNT, etc.) y consultas que necesitan procesar grandes volúmenes de datos
 
 ## Conclusion 
-Los índices columnares son ideales para consultas donde se requiere acceder a ciertas columnas de una tabla y realizar análisis complejos, mejorando el rendimiento en comparación con los índices tradicionales por filas.
+Los índices columnares son ideales para consultas donde se requiere acceder a ciertas columnas de una tabla y realizar análisis complejos, esto permite leer solo las columnas necesarias para la consulta, optimizando el rendimiento en análisis de datos y grandes volúmenes.
+
+Los índices columnares no siguen las mismas reglas de "agrupado" o "no agrupado" porque no se estructuran para ordenar las filas completas; su objetivo principal es optimizar el acceso a columnas específicas.

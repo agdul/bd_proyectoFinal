@@ -60,3 +60,4 @@ SELECT * FROM Veterinario;
 SELECT * FROM CitasMedica;
 SELECT * FROM Tratamiento;
 SELECT * FROM Tratamiento_medicamento;
+

@@ -2,6 +2,7 @@
 Este espacio propone presentar la información para organizar el desarrollo del Sistema de Gestion y Informacion de la Clinica Veterinaria.<br>
 Esta tarea nos fue asigada en la asignatura Bases de Datos I (FaCENA - UNNE)
 
+
 **Estructura inicial del proyecto en el repositorio**
 
     bd_proyectoFinal

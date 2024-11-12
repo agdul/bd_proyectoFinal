@@ -1,3 +1,5 @@
+--Casos de prueba para manejo de permisos a nivel de usuarios
+
 --Caso de prueba para admnistrador 
 
 --Este insert se realizo dentro del usuario como adminisrador 
@@ -16,3 +18,12 @@ VALUES ('Ana', 'Garcia', '87654321', 9876543210, 'ana.garcia@mail.com', 'Avenida
 --Este usuario puede ejecutar el procedimiento, ya que se le otorgó el permiso de ejecución, pero no podrá realizar INSERT 
 --directamente en la tabla.
 EXEC ObtenerDuenoPorDNI @dni = '12345678';
+
+
+--Casos de prueba para manejo de permisos a nivel de rol
+
+-- Conectar como user_role2
+SELECT * FROM dueno;
+
+-- Conectar como user_role1
+SELECT * FROM dueno; 

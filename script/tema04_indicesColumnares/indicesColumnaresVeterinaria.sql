@@ -107,18 +107,18 @@ SET STATISTICS TIME OFF;
 ---------------------------------------------------------------------------------------
 --Esta consulta cuenta la cantidad de citas por id_veterinario, pero solo muestra los veterinarios que tienen más de 500 citas en el sistema.
 
-SET STATISTICS TIME ON;
+--SET STATISTICS TIME ON;
 SELECT id_veterinario, COUNT(*) AS total_citas
 FROM CitasMedica
 GROUP BY id_veterinario
 HAVING COUNT(*) > 500
-SET STATISTICS TIME OFF;
+--SET STATISTICS TIME OFF;
 
-SET STATISTICS TIME ON;
+--SET STATISTICS TIME ON;
 SELECT id_veterinario, COUNT(*) AS total_citas
 FROM CitasMedicaNew
 GROUP BY id_veterinario
 HAVING COUNT(*) > 500
-SET STATISTICS TIME OFF;
+--SET STATISTICS TIME OFF;
 
 --------------------------------------------------------------------------------------------------

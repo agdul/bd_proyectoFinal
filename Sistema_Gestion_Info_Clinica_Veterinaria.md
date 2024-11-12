@@ -183,12 +183,12 @@ Un índice en una base de datos es una estructura adicional, es una estructura d
 
 > Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/tema03_optimizacionConsultasAtravezdeIndices)
 
-### Desarrollo TEMA 3: Optimización de Consultas a través de Índices
+### Desarrollo TEMA 4: Indices Columnares
 
-Un índice en una base de datos es una estructura adicional, es una estructura de disco asociada y contiene claves generadas a partir de una o varias columnas de la tabla o la vista... 
+Los índices columnares son una estructura de datos utilizada en bases de datos para almacenar y recuperar datos más eficientemente cuando las consultas requieren acceder solo a ciertas columnas, en lugar de toda la fila de datos...
 
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/tema03_optimizacionConsultasAtravezdeIndices)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/tema04_indicesColumnares)
 
 ## CAPÍTULO V: CONCLUSIONES
 
@@ -198,9 +198,6 @@ Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vi
 
 ## CAPÍTULO VI: BIBLIOGRAFÍA
 
- 1. List item
- 2. List item
- 3. List item
- 4. List item
- 5. List item
+ 1. https://chatgpt.com
+ 2. https://learn.microsoft.com/es-es/sql/?view=sql-server-ver16
 

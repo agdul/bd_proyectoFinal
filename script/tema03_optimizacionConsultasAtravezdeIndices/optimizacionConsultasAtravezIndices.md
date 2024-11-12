@@ -1,9 +1,8 @@
 # TEMA 3 : Optimización de Consultas a través de Índices 
 
 ## **Introduccion**: <br>
-Un índice en una base de datos es una estructura adicional que se crea para permitir búsquedas rápidas en una o varias columnas de una tabla. Actúa como un índice en un libro, permitiendo encontrar información rápidamente sin tener que recorrer toda la tabla.
-
-Es una estructura de disco asociada, contiene claves generadas a partir de una o varias columnas de la tabla o la vista. Dichas claves están almacenadas en una estructura (árbol b) que permite que SQL Server busque de forma rápida y eficiente la fila o filas asociadas a los valores de cada clave. 
+Un índice en una base de datos es una estructura adicional, es una estructura de disco asociada y contiene claves generadas a partir de una o varias columnas de la tabla o la vista. Dichas claves están almacenadas en una estructura (árbol b) que permite que SQL Server busque de forma rápida y eficiente la fila o filas asociadas a los valores de cada clave. 
+Actúa como un índice en un libro, permitiendo encontrar información rápidamente sin tener que recorrer toda la tabla.
 
 ###Observaciones:<br>
 ### CitasMedica (Sin indice)

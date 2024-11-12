@@ -1,9 +1,8 @@
 # TEMA 3 : Optimización de Consultas a través de Índices 
 
 ## **Introduccion**: <br>
-Un índice en una base de datos es una estructura adicional que se crea para permitir búsquedas rápidas en una o varias columnas de una tabla. Actúa como un índice en un libro, permitiendo encontrar información rápidamente sin tener que recorrer toda la tabla.
-
-Un índice es una estructura de disco asociada con una tabla o una vista que acelera la recuperación de filas de la tabla o de la vista. Un índice contiene claves generadas a partir de una o varias columnas de la tabla o la vista. Dichas claves están almacenadas en una estructura (árbol b) que permite que SQL Server busque de forma rápida y eficiente la fila o filas asociadas a los valores de cada clave. 
+Un índice en una base de datos es una estructura adicional, es una estructura de disco asociada y contiene claves generadas a partir de una o varias columnas de la tabla o la vista. Dichas claves están almacenadas en una estructura (árbol b) que permite que SQL Server busque de forma rápida y eficiente la fila o filas asociadas a los valores de cada clave. 
+Actúa como un índice en un libro, permitiendo encontrar información rápidamente sin tener que recorrer toda la tabla.
 
 ###Observaciones:<br>
 ### CitasMedica (Sin indice)
@@ -34,8 +33,8 @@ Tiempos de respuesta: Los tiempos de respuesta deberían disminuir considerablem
 y más aún con el índice cubierto que incluye las columnas seleccionadas.
 
 ##Conclusiones:<br>
-Crear un índice agrupado sobre la columna que filtras (como fecha_nacimiento) mejora la eficiencia de la consulta.
-Si puedes crear un índice cubierto, el rendimiento mejorará aún más, 
+AL crear un índice agrupado sobre una  columna, como fecha_nacimiento, mejora la eficiencia de la consulta.
+Pero si se  crea un índice utilizando mas columnas, el rendimiento mejorará aún más, 
 ya que SQL Server utilizará solo el índice para resolver la consulta sin tener que acceder a la tabla principal.
 
 

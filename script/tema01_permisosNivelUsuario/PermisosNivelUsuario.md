@@ -35,8 +35,6 @@ Cuando ya tenemos cada usuario con sus respectivos permisos, Utilizaremos un pro
 
 ![ProcedimientoAlmacenado](https://github.com/user-attachments/assets/809e8b32-08c4-4c37-a40f-f363116c111e)
 
-Prueba en cada Usuarios
-
 Realizamos las pruebas en cada usuarios, en cada unos tratamos de insertar datos en la tabla dueño, en el usuario adminsitrador nos permite poder insertar ese dueño lo cual esta correcto devido a los permisos que les asignamos, en cambio al usuario que solo le permitimos la lectura me muestra un mensaje de error diciendo que se denegó el permiso de inserción en el objeto dueño.
 
 Prueba en admin_usuario

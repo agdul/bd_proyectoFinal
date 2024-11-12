@@ -18,3 +18,5 @@ Los índices columnares están diseñados para consultas de análisis (como SUM,
 Los índices columnares son ideales para consultas donde se requiere acceder a ciertas columnas de una tabla y realizar análisis complejos, esto permite leer solo las columnas necesarias para la consulta, optimizando el rendimiento en análisis de datos y grandes volúmenes.
 
 La diferencia básica entre índices agrupados y no agrupados es que los registros de un índice agrupado están ordenados y almacenados de forma secuencial en función de su clave, lo que evita tener que hacer muchas lectura. Esto hace que las consultas sean más eficientes y rápidas cuando devuelven mas de un registro.
+
+

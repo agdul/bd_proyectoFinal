@@ -1,11 +1,15 @@
 USE gestion_veterinaria;
-GO;
+GO
 
 --- Ver todos los procedimientos almacenados de la base de datos  
 SELECT name AS Procedimiento, create_date, modify_date
 FROM sys.procedures
 ORDER BY name;
 GO
+
+-- Ver el detalle de un procedimiento almacenado 
+EXEC sp_helptext 'DeleteEspecie';
+
 
 -----------------------------------------------------------------------------------------------------------------------------
 ------ INSERTS ---------------
@@ -340,6 +344,17 @@ BEGIN
 END; 
 
 GO;
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE ObtenerEdadMascota
+AS
+BEGIN
+    SELECT nombre_mascota, DATEDIFF(YEAR, fecha_nacimiento, GETDATE()) AS Edad
+    FROM Mascota;
+END;
+GO
+
 -----------------------------------------------------------------------------------------------------------------------------
 ------ UPDATE ---------------
 -----------------------------------------------------------------------------------------------------------------------------

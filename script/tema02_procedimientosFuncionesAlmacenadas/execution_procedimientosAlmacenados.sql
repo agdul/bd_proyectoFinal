@@ -5,11 +5,11 @@ SELECT * FROM Especie
 SELECT * FROM Raza 
 -----------------------------------------------------------------------------------------------------------------------------
 -- Inserciones de Mascota
-EXEC InsertMascota @nombre_mascota = 'Maxsyle', @fecha_nacimiento = '2020-01-10', @peso_mascota = 5.5, @condicion_mascota = 'Saludable', @id_dueno = 1, @id_raza = 1;
+EXEC InsertMascota @nombre_mascota = 'Kamelon', @fecha_nacimiento = '2020-01-10', @peso_mascota = 5.5, @condicion_mascota = 'Saludable', @id_dueno = 1, @id_raza = 1;
 
-EXEC InsertMascota @nombre_mascota = 'BellaVista', @fecha_nacimiento = '2019-03-20', @peso_mascota = 8.2, @condicion_mascota = 'Vacunada', @id_dueno = 2, @id_raza = 2;
+EXEC InsertMascota @nombre_mascota = 'BeiaLuna', @fecha_nacimiento = '2019-03-20', @peso_mascota = 8.2, @condicion_mascota = 'Vacunada', @id_dueno = 2, @id_raza = 2;
 
-EXEC InsertMascota @nombre_mascota = 'RickyMaravilla', @fecha_nacimiento = '2018-08-15', @peso_mascota = 12.4, @condicion_mascota = 'En tratamiento', @id_dueno = 1, @id_raza = 1;
+EXEC InsertMascota @nombre_mascota = 'Roberto', @fecha_nacimiento = '2018-08-15', @peso_mascota = 12.4, @condicion_mascota = 'En tratamiento', @id_dueno = 1, @id_raza = 1;
 -----------------------------------------------------------------------------------------------------------------------------
 -- Chequeo de insercion 
 SELECT * FROM Mascota 

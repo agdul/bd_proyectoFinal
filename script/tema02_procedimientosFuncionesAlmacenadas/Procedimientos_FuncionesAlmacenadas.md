@@ -1,4 +1,4 @@
-# TEMA 2 : Procedimientos y Funciones Almacenadas
+# TEMA 2 : Procedimientos y Funciones Almacenadas Teoria 
 
 ## **Procedimientos Almacenados**USE gestion_veterinaria; <br>
 Un procedimiento almacenado en SQL Server es un conjunto de instrucciones SQL o una referencia a un método .NET CLR, similar a funciones en otros lenguajes de programación. Los procedimientos almacenados permiten: <br>
@@ -82,3 +82,54 @@ Deseas un mayor control en la administración de permisos y accesos indirectos.<
 Necesitas un valor calculado o una tabla como resultado que puede ser utilizado en una consulta.<br>
 Requieres un cálculo que se debe reutilizar en múltiples consultas SQL, especialmente en filtros (WHERE) o agrupaciones (GROUP BY).<br>
 El resultado de la operación es un cálculo o transformación que no necesita modificar los datos en la base.<br>
+
+
+# TEMA 2 : Procedimientos y Funciones Almacenadas Desarrollo Practico
+
+## **Definicion de Procedimientos**<br> 
+### De esta forma fuimos creando cada procedimiento almacenado del proyecto<br> 
+![tema02-img1](img/tema02-img1.png)<br> 
+![tema02-img2](img/tema02-img2.png)<br> 
+
+## **Definicion de Funciones**<br> 
+### De esta forma fuimos creando cada funcion almacenada del proyecto<br> 
+![tema02-img3](img/tema02-img3.png)<br>
+
+## **Ejecucion de los Procedimientos Almacenados**<br> 
+![tema02-img4](img/tema02-img4.png)<br>
+![tema02-img5](img/tema02-img5.png)<br>
+
+## **Ejecucion de las Funciones Almacenadas**<br> 
+![tema02-img6](img/tema02-img6.png)<br>
+
+## **Eficiencia**<br>
+### Operacion Directa vs Procedimiento vs Funcion Almacenada<br>
+ ![tema02-img7](img/tema02-img7.png)
+
+
+ ```  SQL Server Execution Times:
+   CPU time = 38 ms,  elapsed time = 54 ms.
+---------------------------------------
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+(51206 rows affected)
+Table 'Mascota'. Scan count 1, logical reads 357, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 37 ms,  elapsed time = 38 ms.
+
+ SQL Server Execution Times:
+   CPU time = 37 ms,  elapsed time = 38 ms.
+---------------------------------------
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.
+(51206 rows affected)
+Table 'Mascota'. Scan count 1, logical reads 357, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 914 ms,  elapsed time = 1052 ms.
+Total execution time: 00:00:01.159

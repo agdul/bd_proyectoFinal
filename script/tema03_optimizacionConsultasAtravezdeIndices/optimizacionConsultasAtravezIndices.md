@@ -34,4 +34,3 @@ Si puedes crear un índice cubierto, el rendimiento mejorará aún más,
 ya que SQL Server utilizará solo el índice para resolver la consulta sin tener que acceder a la tabla principal.*/ 
 
 
-### CitasMedica (con indice agrupado por (fecha_citaMedica, id_mascota, id_veterinario)) vs CitasMedicaNew (con indice agrupado por (fecha_citaMedica))

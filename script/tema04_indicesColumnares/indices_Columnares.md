@@ -19,7 +19,7 @@ Los índices columnares son ideales para consultas donde se requiere acceder a c
 
 La diferencia básica entre índices agrupados y no agrupados es que los registros de un índice agrupado están ordenados y almacenados de forma secuencial en función de su clave, lo que evita tener que hacer muchas lectura. Esto hace que las consultas sean más eficientes y rápidas cuando devuelven mas de un registro.
 
-## CAPÍTULO IV: DESARROLLO DEL TEMA/RESULTADOS 
+## Desarrollo del tema/Resultados 
 
 Como primera instancia realizamos la creación de la tabla de mayor ocurrencia del modelo de la tabla origen a y adaptándola a nuestras necesidades, la cuel se va a llamar CitasMedicaNew. El script utilizado para ello es el que se describe a continuación:
 

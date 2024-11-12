@@ -153,9 +153,9 @@ Con base en los tiempos de ejecución y las lecturas lógicas registradas, anali
 **Filas afectadas:** 51,206<br>
 **Conclusión:** Aunque el procedimiento almacenado parece un poco más lento en la segunda ejecución (probablemente por optimización de caché o el proceso de compilación inicial), sigue siendo eficiente, con tiempos muy bajos comparables a la consulta directa.<br>
 
-### Función Escalar
-**CPU time:** 914 ms
-**Elapsed time:** 1052 ms
-**Logical Reads:** 357
-**Filas afectadas:** 51,206
-**Conclusión:** La función escalar es considerablemente más lenta que las otras dos opciones, con tiempos de CPU y ejecución superiores a 900 ms y 1000 ms, respectivamente. Esto se debe a que SQL Server ejecuta la función en cada fila de forma individual, lo que genera una carga adicional significativa.
+### Función Escalar<br>
+**CPU time:** 914 ms<br>
+**Elapsed time:** 1052 ms<br>
+**Logical Reads:** 357<br>
+**Filas afectadas:** 51,206<br>
+**Conclusión:** La función escalar es considerablemente más lenta que las otras dos opciones, con tiempos de CPU y ejecución superiores a 900 ms y 1000 ms, respectivamente. Esto se debe a que SQL Server ejecuta la función en cada fila de forma individual, lo que genera una carga adicional significativa.<br>

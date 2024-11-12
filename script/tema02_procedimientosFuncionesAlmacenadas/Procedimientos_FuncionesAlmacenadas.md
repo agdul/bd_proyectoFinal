@@ -77,6 +77,7 @@ Necesitas realizar operaciones que modifican datos (inserciones, actualizaciones
 La lógica implica múltiples pasos o llamas a otros procedimientos.<br> 
 La operación no debe usarse en una consulta SELECT o JOIN, sino ejecutarse como un proceso independiente.<br> 
 Deseas un mayor control en la administración de permisos y accesos indirectos.<br> 
+
 **Funciones son ideales cuando:**<br> 
 Necesitas un valor calculado o una tabla como resultado que puede ser utilizado en una consulta.<br>
 Requieres un cálculo que se debe reutilizar en múltiples consultas SQL, especialmente en filtros (WHERE) o agrupaciones (GROUP BY).<br>

@@ -18,3 +18,5 @@ Al limitar los permisos, se reduce el riesgo de errores accidentales. Por ejempl
 
 ### Auditoría y Cumplimiento: 
 Facilita el seguimiento de las acciones realizadas por cada usuario, lo que es esencial para auditorías y para cumplir con regulaciones de privacidad y protección de datos.
+
+## Desarrollo del tema/Resultados

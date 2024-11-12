@@ -92,7 +92,7 @@ Con indices columnares <br>
 
 ![image 2](https://github.com/user-attachments/assets/4fe5d7ca-b63c-4f7a-bb70-1040fb9b0d93)
 
-rendimiento <br>
+<br> Rendimiento <br>
 
 ![imagen 1 3](https://github.com/user-attachments/assets/244c5ec7-5a59-48ec-8db8-2b75906bb0ee)
 

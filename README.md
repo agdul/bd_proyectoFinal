@@ -1,10 +1,6 @@
 # Bases de Datos I - Proyecto de Estudio
-Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)
-
-
-# Proyecto de Estudio
-
-Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)
+Este espacio propone presentar la información para organizar el desarrollo del Sistema de Gestion y Informacion de la Clinica Veterinaria.<br>
+Esta tarea nos fue asigada en la asignatura Bases de Datos I (FaCENA - UNNE)
 
 **Estructura inicial del proyecto en el repositorio**
 
@@ -12,12 +8,27 @@ Este espacio propone presentar la información para organizar el desarrollo del 
     ->doc (carpeta con documentos e imágenes asociados al contenido principal)
     ->script (capeta de código del proyecto)
 	---->tema01_permisosNivelUsuario (sub-carpeta específica del tema)
-		  tema01_script01.sql
-		  tema01_script02.sql
-		  tema_nombre.md (descripción completa del procedimiento para implementar el tema técnico de estudio)
+		  CasosDePruebaUsusariosYRoles.sql
+		  ManejoDePermisosUsuarioYRoles.sql
+		  PermisosNivelUsuario.md
 	---->tema02_procedimientosFuncionesAlmacenadas
-	----> ...
+		   ---->img
+		   execution_funcionesAlmacenadas.sql
+		   execution_procedimientosAlmacenados.sql
+		   funcionesAlmacenadas.sql
+		   Procedimientos_FuncionesAlmacenadas.md
+		   procedimientosAlmacenados.sql
+		   rendimiento_procedimientosFuncionesAlm.sql
+	---->tema03_optimizacionConsultasAtravezdeIndices
+		   ---->img
+		   insert_optimizacionConsultas.sql
+		   optimizacionConsultas.sql
+		   optimizacionConsultasAtravezIndices.md
+	---->tema04_procedimientosFuncionesAlmacenadas
     ->Sistema de Gestion de Informacion para Clinica Veterinaria.md (documento principal estructurado por capítulos)
+	->inserts_duplicado_Veterinaria.sql
+	->inserts_Veterinaria.sql
+	->script_Veterinaria.sql
     
 
 [Documento principal del Proyecto](https://github.com/agdul/bd_proyectoFinal/blob/main/Sistema_Gestion_Info_Clinica_Veterinaria.md)

@@ -3,6 +3,11 @@
 
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
+**Profesores**: 
+ - Lic. Villegas, Dario
+ - Exp. Cuzziol, Juan
+ - Lic. Vallejos, Walter
+
 **Integrantes**:
  - Beck, Pablo 
  - Belucci, Lautaro

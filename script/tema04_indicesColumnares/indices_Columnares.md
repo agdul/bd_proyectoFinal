@@ -51,48 +51,48 @@ Para la medición de las pruebas utilizamos la siguiente sentencia para ver las 
 
 ![operaciones entradaSalida](https://github.com/user-attachments/assets/95be4ea8-d77c-494a-b0c9-868ff6f34088)
 
-1) prueba 1
+Prueba 1<br>
 
 Esta consulta cuenta la cantidad de citas por id_veterinario, pero solo muestra los veterinarios que tienen más de 500 citas en el sistema.
 
-Sin indices columnares 
+Sin indices columnares <br>
 
 ![sin indice](https://github.com/user-attachments/assets/4711a7aa-a6f6-4ace-847f-6981f7a3bda3)
 
-Rendimiento
+Rendimiento<br>
 
 ![rendimento1](https://github.com/user-attachments/assets/622fe30d-6dcb-445f-82c4-31d4684132f3)
 
 ![rendimento2](https://github.com/user-attachments/assets/b9ef8ad2-4e73-475f-ad36-57b50ce57070)
 
-con indices columnares 
+con indices columnares <br>
 
 ![con indice](https://github.com/user-attachments/assets/465d7b23-429f-4edc-b49f-dedba3a8689b)
 
-Rendimiento
+Rendimiento<br>
 
 ![rendimento1 1](https://github.com/user-attachments/assets/de033209-a393-46ed-8692-68e074fff414)
 
 ![rendimento2 2](https://github.com/user-attachments/assets/efd707c6-07ea-46be-acdb-41127043edba)
 
-2) prueba 2 
+Prueba 2 <br>
 
 Cuenta el número de citas y calcula el peso promedio de las mascotas atendidas por cada veterinario, realizando un JOIN con la tabla Mascota.
 
-Sin indices columnares 
+Sin indices columnares <br>
 
 ![image 1](https://github.com/user-attachments/assets/7012eae1-a51b-4e6e-aefa-3426ae36940e)
 
-Rendimiento
+Rendimiento <br>
 ![ult1](https://github.com/user-attachments/assets/f35ca2f5-3a14-4062-b335-c33d3c11d0ce)
 
 ![ult](https://github.com/user-attachments/assets/37358c6b-0f15-4d7a-a763-42d4fab97199)
 
-Con indices columnares 
+Con indices columnares <br>
 
 ![image 2](https://github.com/user-attachments/assets/4fe5d7ca-b63c-4f7a-bb70-1040fb9b0d93)
 
- rendimiento
+rendimiento <br>
 
 ![imagen 1 3](https://github.com/user-attachments/assets/244c5ec7-5a59-48ec-8db8-2b75906bb0ee)
 

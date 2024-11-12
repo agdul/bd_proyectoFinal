@@ -169,5 +169,7 @@ La función escalar es la más lenta de todas, con un impacto de rendimiento sig
 ## Conclusion: 
 
 Los procedimientos almacenados y las funciones en SQL Server son herramientas esenciales que mejoran la eficiencia y seguridad de las bases de datos. Ambos permiten centralizar el código, reutilizarlo y protegerlo contra ataques como la inyección SQL, gracias a su uso de parámetros.
+
 La principal diferencia es que los procedimientos pueden modificar datos directamente en la base de datos y no se pueden utilizar dentro de consultas SELECT. En cambio, las funciones siempre devuelven un valor (puede ser un único dato o una tabla) y se pueden usar dentro de consultas, lo que las hace ideales para cálculos y filtros.
+
 En general, los procedimientos son más adecuados para tareas complejas y operaciones que modifican datos, mientras que las funciones se utilizan mejor para obtener cálculos o resultados que se integren en consultas SQL sin cambiar el estado de la base. Ambos son clave para mejorar el rendimiento y la modularidad en la gestión de bases de datos.

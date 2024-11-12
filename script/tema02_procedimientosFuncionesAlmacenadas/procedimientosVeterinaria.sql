@@ -1,6 +1,9 @@
 USE gestion_veterinaria;
-
 GO;
+--- POR HACER Cambiar los id son auto incremental sacar de los procedimientos 
+-----------------------------------------------------------------------------------------------------------------------------
+------ INSERTS ---------------
+-----------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertMascota
 	--Como validar los datos desde aqui?
     @id_mascota INT,
@@ -17,18 +20,11 @@ BEGIN
 END;
 
 GO;
-CREATE PROCEDURE ObtenerMascotaPorID
-    @id INT
-AS
-BEGIN
-    SELECT *
-    FROM Mascota 
-    WHERE id_mascota = @id;
-END;
 
+-------------------------------------------------------------------------------------------------------------------------------------
 DROP PROCEDURE IF EXISTS InsertarEspecie;
-
 GO;
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarEspecie
     @id INT,
     @nombre VARCHAR(30)
@@ -38,6 +34,7 @@ BEGIN
     VALUES (@id, @nombre);
 END;
 GO;
+-------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE InsertarRaza
     @id_raza INT,
@@ -50,6 +47,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarDueno
     @id_dueno INT,
     @nombre_dueno VARCHAR(50),
@@ -65,6 +64,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarEspecialidad
     @id INT,
     @nombre VARCHAR(30)
@@ -75,6 +76,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarLaboratorio
     @id_laboratorio INT,
     @nombre_lab VARCHAR(20)
@@ -85,6 +88,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarMedicamento
     @id INT,
     @nombre_comercial VARCHAR(50),
@@ -98,6 +103,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarVeterinario
     @id INT,
     @nro_licProfesional INT,
@@ -113,6 +120,8 @@ END;
 
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarCitaMedica
     @id_citaMedica INT,
     @fecha_citaMedica DATE,
@@ -128,6 +137,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE InsertarTratamiento
     @id_tratamiento INT,
     @nombre_tratamiento VARCHAR(50),
@@ -141,17 +152,11 @@ BEGIN
 END;
 
 GO;
-CREATE PROCEDURE InsertarTratamientoMedicamento
-    @id_medicamento INT,
-    @id_tratamiento INT,
-    @id_citaMedica INT
-AS
-BEGIN
-    INSERT INTO Tratamiento_medicamento (id_medicamento, id_tratamiento)
-    VALUES (@id_medicamento, @id_tratamiento, @id_citaMedica);
-END;
 
-GO;
+
+-----------------------------------------------------------------------------------------------------------------------------
+------ GET ONE ---------------
+-----------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerEspeciePorID
     @id_especie INT
 AS
@@ -159,7 +164,10 @@ BEGIN
     SELECT * FROM Especie WHERE id_especie = @id_especie;
 END;
 
+
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerRazaPorID
     @id_raza INT
 AS
@@ -168,6 +176,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerDuenoPorDNI
     @dni VARCHAR(8)
 AS
@@ -176,6 +186,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerEspecialidadPorID
     @id_especialidad INT
 AS
@@ -184,6 +196,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerLaboratorioPorID
     @id_laboratorio INT
 AS
@@ -192,6 +206,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerMascotaId
     @id_mascota INT
 AS
@@ -205,6 +221,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerMedicamentoPorID
     @id_medicamento INT
 AS
@@ -213,6 +231,8 @@ BEGIN
 END;
 
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerVeterinarioPorNroLicencia
     @nro_licencia INT
 AS
@@ -220,11 +240,114 @@ BEGIN
     SELECT * FROM Veterinario WHERE nro_licProfesional = @nro_licencia;
 END;
 
-
 GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE ObtenerCitaMedicaPorID
     @id_citaMedica INT
 AS
 BEGIN
     SELECT * FROM CitasMedica WHERE id_citaMedica = @id_citaMedica;
 END;
+
+GO;
+
+-------------------------------------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE ObtenerMascotaPorID
+    @id INT
+AS
+BEGIN
+    SELECT *
+    FROM Mascota 
+    WHERE id_mascota = @id;
+END;
+
+GO;
+-----------------------------------------------------------------------------------------------------------------------------
+------ UPDATE ---------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE UpdateMascota
+    @id_mascota INT,
+    @nombre_mascota VARCHAR(10),
+    @fecha_nacimiento DATE,
+    @peso_mascota FLOAT,
+    @condicion_mascota VARCHAR(50),
+    @id_dueno INT,
+    @id_raza INT
+AS
+BEGIN
+    UPDATE Mascota
+    SET nombre_mascota = @nombre_mascota,
+        fecha_nacimiento = @fecha_nacimiento,
+        peso_mascota = @peso_mascota,
+        condicion_mascota = @condicion_mascota,
+        id_dueno = @id_dueno,
+        id_raza = @id_raza
+    WHERE id_mascota = @id_mascota;
+END;
+
+GO;
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE UpdateEspecie
+    @id INT,
+    @nombre VARCHAR(30)
+AS
+BEGIN
+    UPDATE Especie
+    SET nombre_especie = @nombre
+    WHERE id_especie = @id;
+END;
+
+GO;
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE UpdateRaza
+    @id_raza INT,
+    @nombre_raza VARCHAR(30),
+    @id_especie INT
+AS
+BEGIN
+    UPDATE Raza
+    SET nombre_raza = @nombre_raza,
+        id_especie = @id_especie
+    WHERE id_raza = @id_raza;
+END;
+
+GO;
+
+-------------------------------------------------------------------------
+-------- DELETE --------------------
+-------------------------------------------------------------------------
+
+CREATE PROCEDURE DeleteMascota
+    @id_mascota INT
+AS
+BEGIN
+    DELETE FROM Mascota
+    WHERE id_mascota = @id_mascota;
+END;
+GO;
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE DeleteEspecie
+    @id INT
+AS
+BEGIN
+    DELETE FROM Especie
+    WHERE id_especie = @id;
+END;
+
+GO;
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE DeleteRaza
+    @id_raza INT
+AS
+BEGIN
+    DELETE FROM Raza
+    WHERE id_raza = @id_raza;
+END;
+GO;

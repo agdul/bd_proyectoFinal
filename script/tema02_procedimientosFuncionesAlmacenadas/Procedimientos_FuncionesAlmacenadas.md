@@ -21,7 +21,7 @@ Un procedimiento almacenado en SQL Server es un conjunto de instrucciones SQL o 
 *Del sistema:* Incluidos en SQL Server, con el prefijo sp_, utilizados para mantenimiento y accesibles en bases de datos de usuario.<br>
 *Extendidos:* Permiten rutinas externas en otros lenguajes, sin embargo, se recomienda reemplazarlos con procedimientos CLR, ya que serán eliminados en futuras versiones de SQL Server.<br>
 
-## **Funciones**: <br>
+## **Funciones Almacenadas**: <br>
 Las funciones definidas por el usuario (UDF) en SQL Server permiten la creación de rutinas que realizan operaciones específicas, devolviendo un valor escalar o un conjunto de resultados.<br>
 
 ### **Ventajas de las funciones definidas por el usuario**
@@ -146,6 +146,8 @@ Con base en los tiempos de ejecución y las lecturas lógicas registradas, anali
 **Logical Reads:** No especificado (pero probablemente similar a las siguientes)<br>
 **Conclusión:** Esta consulta directa es la más rápida en términos de tiempo de CPU y tiempo total de ejecución, con tiempos de CPU y ejecución mucho menores.<br>
 
+La consulta directa es la más rápida y eficiente, ideal para operaciones simples y cuando se busca minimizar el tiempo de CPU y la latencia.<br>
+
 ### Procedimiento Almacenado<br>
 **CPU time:** 37 ms<br>
 **Elapsed time:** 38 ms<br>
@@ -153,9 +155,13 @@ Con base en los tiempos de ejecución y las lecturas lógicas registradas, anali
 **Filas afectadas:** 51,206<br>
 **Conclusión:** Aunque el procedimiento almacenado parece un poco más lento en la segunda ejecución (probablemente por optimización de caché o el proceso de compilación inicial), sigue siendo eficiente, con tiempos muy bajos comparables a la consulta directa.<br>
 
+El procedimiento almacenado también es rápido, manteniéndose casi a la par con la consulta directa. Los procedimientos almacenados son una buena opción si necesitas encapsular lógica en un formato reutilizable y ligeramente más optimizado.<br>
+
 ### Función Escalar<br>
 **CPU time:** 914 ms<br>
 **Elapsed time:** 1052 ms<br>
 **Logical Reads:** 357<br>
 **Filas afectadas:** 51,206<br>
 **Conclusión:** La función escalar es considerablemente más lenta que las otras dos opciones, con tiempos de CPU y ejecución superiores a 900 ms y 1000 ms, respectivamente. Esto se debe a que SQL Server ejecuta la función en cada fila de forma individual, lo que genera una carga adicional significativa.<br>
+
+La función escalar es la más lenta de todas, con un impacto de rendimiento significativo. Esto se debe al hecho de que la función se evalúa para cada fila de manera individual, lo que aumenta el tiempo de ejecución.<br>

@@ -6,8 +6,6 @@ INSERT INTO Mascota (nombre_mascota, fecha_nacimiento, peso_mascota, condicion_m
 SELECT nombre_mascota, fecha_nacimiento, peso_mascota, condicion_mascota, id_dueno, id_raza
 FROM Mascota;
 
-
---INICIO DE LA FUNCION DUPLICAR VET 
 -- Ejecutar varias veces para poder llegar al millon de insersiones en cita medica 
 WITH CTE AS (
     SELECT  nro_licProfesional + ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS nuevo_nro_licProfesional,
@@ -33,6 +31,14 @@ WHERE NOT EXISTS (
 --FIN DE LA FUNCION DUPLICAR VET
 
 
+
+
+
+
+
+
+
+
 -- Creamos una nueva tabla
 CREATE TABLE CitasMedicaNew
 (
@@ -47,6 +53,13 @@ CREATE TABLE CitasMedicaNew
   CONSTRAINT FK_CitasMedicaNew_id_mascota FOREIGN KEY (id_mascota) REFERENCES Mascota(id_mascota),
   CONSTRAINT FK_CitasMedicaNew_id_veterinario FOREIGN KEY (id_veterinario) REFERENCES Veterinario(id_veterinario)
 );
+
+
+select count(*) from CitasMedicaNew
+
+
+
+
 
 -- Carga masiva de datos en la tabla CitaMedicaNew
 INSERT INTO CitasMedicaNew (fecha_citaMedica, observaciones_citaMedica, usuario, motivo_visita, id_mascota, id_veterinario)

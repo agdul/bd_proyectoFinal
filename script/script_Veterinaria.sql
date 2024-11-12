@@ -131,4 +131,3 @@ ADD CONSTRAINT CK_mascota_fecha_nacimiento
 CHECK (fecha_nacimiento >= DATEADD(YEAR, -30, GETDATE()));
 
 
-

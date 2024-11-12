@@ -169,7 +169,7 @@ Acceso al documento [PDF](doc/Diccionario_datos_Veterinaria.pdf) del diccionario
 
 El manejo de permisos a nivel de usuario en una base de datos implica la asignación de derechos y privilegios específicos a diferentes usuarios o roles dentro del sistema. Estos permisos determinan ...
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_permisosNivelUsuario)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> Permisos Nivel Usuario](script/tema01_permisosNivelUsuario)
 
 ### Desarrollo TEMA 2: Procedimientos y Funciones Almacenadas
 
@@ -181,14 +181,14 @@ Un procedimiento almacenado en SQL Server es un conjunto de instrucciones SQL o 
 
 Un índice en una base de datos es una estructura adicional, es una estructura de disco asociada y contiene claves generadas a partir de una o varias columnas de la tabla o la vista... 
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/tema03_optimizacionConsultasAtravezdeIndices)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> Optimizacion de Consultas atravez de Indices](script/tema03_optimizacionConsultasAtravezdeIndices)
 
 ### Desarrollo TEMA 4: Indices Columnares
 
 Los índices columnares son una estructura de datos utilizada en bases de datos para almacenar y recuperar datos más eficientemente cuando las consultas requieren acceder solo a ciertas columnas, en lugar de toda la fila de datos...
 
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/tema04_indicesColumnares)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> Indices Columnares](script/tema04_indicesColumnares)
 
 ## CAPÍTULO V: CONCLUSIONES
 

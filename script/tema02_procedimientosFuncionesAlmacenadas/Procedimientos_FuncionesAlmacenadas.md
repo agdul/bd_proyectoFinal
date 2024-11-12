@@ -44,32 +44,32 @@ Las funciones definidas por el usuario (UDF) en SQL Server permiten la creación
 ## Entonces en que se parecen y en que se diferencian
 
 ### Similitudes entre procedimientos almacenados y funciones
-*Modularidad:* Ambos permiten encapsular y reutilizar lógica SQL, facilitando la programación modular.<br>
-*Parámetros de entrada:* Ambos pueden recibir parámetros de entrada (aunque los procedimientos almacenados también pueden tener parámetros de salida).<br>
-*Mantenimiento de código:* Ambos permiten centralizar el código SQL, simplificando el mantenimiento al evitar duplicación.<br>
-*Seguridad:* Al encapsular lógica compleja, ambos pueden ayudar a evitar inyecciones SQL y a mejorar el control de acceso.<br>
+_*Modularidad:*_ Ambos permiten encapsular y reutilizar lógica SQL, facilitando la programación modular.<br>
+_*Parámetros de entrada:*_ Ambos pueden recibir parámetros de entrada (aunque los procedimientos almacenados también pueden tener parámetros de salida).<br>
+_*Mantenimiento de código:*_ Ambos permiten centralizar el código SQL, simplificando el mantenimiento al evitar duplicación.<br>
+_*Seguridad:*_ Al encapsular lógica compleja, ambos pueden ayudar a evitar inyecciones SQL y a mejorar el control de acceso.<br>
 
 ### Diferencias entre procedimientos almacenados y funciones
 
 **Tipos de retorno:**<br>
-*Procedimientos almacenados:* No necesariamente devuelven un valor, aunque pueden devolver un valor de estado (éxito o error) o pasar datos mediante parámetros de salida. Sin embargo, también pueden devolver conjuntos de resultados con SELECT.<br>
-*Funciones:* Siempre devuelven un valor, ya sea escalar (como un INT o VARCHAR) o un conjunto de resultados (como una tabla), por lo que son útiles en cálculos o lógicas que devuelvan algo específico.<br>
+_*Procedimientos almacenados:*_ No necesariamente devuelven un valor, aunque pueden devolver un valor de estado (éxito o error) o pasar datos mediante parámetros de salida. Sin embargo, también pueden devolver conjuntos de resultados con SELECT.<br>
+_*Funciones:*_ Siempre devuelven un valor, ya sea escalar (como un INT o VARCHAR) o un conjunto de resultados (como una tabla), por lo que son útiles en cálculos o lógicas que devuelvan algo específico.<br>
 
 **Modificación de datos:**<br>
-*Procedimientos almacenados:* Pueden modificar el estado de la base de datos directamente, como realizar INSERT, UPDATE o DELETE en tablas.<br>
-*Funciones:* No pueden modificar datos fuera de su propio contexto. Esto significa que no pueden alterar el estado de la base de datos, lo que las hace "sin efectos secundarios".<br>
+_*Procedimientos almacenados:*_ Pueden modificar el estado de la base de datos directamente, como realizar INSERT, UPDATE o DELETE en tablas.<br>
+_*Funciones:*_ No pueden modificar datos fuera de su propio contexto. Esto significa que no pueden alterar el estado de la base de datos, lo que las hace "sin efectos secundarios".<br>
 
 **Uso en consultas SQL:**<br>
-*Procedimientos almacenados:* No se pueden usar directamente en consultas SELECT, WHERE o JOIN.<br>
-*Funciones:* Se pueden utilizar en sentencias SQL como SELECT, WHERE, JOIN, etc., lo cual es útil para realizar cálculos y filtros dentro de consultas.<br>
+_*Procedimientos almacenados:*_ No se pueden usar directamente en consultas SELECT, WHERE o JOIN.<br>
+_*Funciones:*_ Se pueden utilizar en sentencias SQL como SELECT, WHERE, JOIN, etc., lo cual es útil para realizar cálculos y filtros dentro de consultas.<br>
 
 **Parámetros de salida:**<br>
-*Procedimientos almacenados:* Permiten parámetros de salida, lo que facilita devolver múltiples valores de salida.<br>
-*Funciones:* No permiten parámetros de salida; solo pueden devolver un único valor escalar o una tabla.<br>
+_*Procedimientos almacenados:*_ Permiten parámetros de salida, lo que facilita devolver múltiples valores de salida.<br>
+_*Funciones:*_ No permiten parámetros de salida; solo pueden devolver un único valor escalar o una tabla.<br>
 
 **Paralelismo y determinismo:**<br>
-*Funciones:* Al tener limitaciones sobre su paralelismo y ejecución determinista, pueden ser restrictivas en ciertas operaciones complejas y lentas para grandes volúmenes de datos.<br>
-*Procedimientos almacenados:* No tienen estas restricciones, y pueden utilizarse de forma más flexible, permitiendo optimizaciones y paralelismo en consultas complejas.<br>
+_*Funciones:*_ Al tener limitaciones sobre su paralelismo y ejecución determinista, pueden ser restrictivas en ciertas operaciones complejas y lentas para grandes volúmenes de datos.<br>
+_*Procedimientos almacenados:*_ No tienen estas restricciones, y pueden utilizarse de forma más flexible, permitiendo optimizaciones y paralelismo en consultas complejas.<br>
 
 ### ¿Cuándo usar procedimientos almacenados vs. funciones?
 **Procedimientos almacenados son ideales cuando:**<br> 
@@ -77,7 +77,7 @@ Necesitas realizar operaciones que modifican datos (inserciones, actualizaciones
 La lógica implica múltiples pasos o llamas a otros procedimientos.<br> 
 La operación no debe usarse en una consulta SELECT o JOIN, sino ejecutarse como un proceso independiente.<br> 
 Deseas un mayor control en la administración de permisos y accesos indirectos.<br> 
-**Funciones son ideales cuando:**
+**Funciones son ideales cuando:**<br> 
 Necesitas un valor calculado o una tabla como resultado que puede ser utilizado en una consulta.<br>
 Requieres un cálculo que se debe reutilizar en múltiples consultas SQL, especialmente en filtros (WHERE) o agrupaciones (GROUP BY).<br>
 El resultado de la operación es un cálculo o transformación que no necesita modificar los datos en la base.<br>

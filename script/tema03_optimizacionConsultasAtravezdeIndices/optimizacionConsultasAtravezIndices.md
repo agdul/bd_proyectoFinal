@@ -55,7 +55,7 @@ Con un índice agrupado, deberías ver que se está utilizando un índice de bú
 Tiempos de respuesta: Los tiempos de respuesta deberían disminuir considerablemente después de crear el índice,
 y más aún con el índice cubierto que incluye las columnas seleccionadas.
 
-##Conclusiones:<br>
+## Conclusiones:<br>
 AL crear un índice agrupado sobre una  columna, como fecha_nacimiento, mejora la eficiencia de la consulta.
 Pero si se  crea un índice utilizando mas columnas, el rendimiento mejorará aún más, 
 ya que SQL Server utilizará solo el índice para resolver la consulta sin tener que acceder a la tabla principal.

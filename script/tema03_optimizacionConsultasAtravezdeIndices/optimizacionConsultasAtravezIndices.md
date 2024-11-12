@@ -2,33 +2,32 @@
 
 ## **Introduccion**: <br>
 Un índice en una base de datos es una estructura adicional, es una estructura de disco asociada y contiene claves generadas a partir de una o varias columnas de la tabla o la vista. Dichas claves están almacenadas en una estructura (árbol b) que permite que SQL Server busque de forma rápida y eficiente la fila o filas asociadas a los valores de cada clave. 
-Actúa como un índice en un libro, permitiendo encontrar información rápidamente sin tener que recorrer toda la tabla.
 
-###Agrupado<br>
+### Agrupado<br>
 
 Los índices clúster ordenan y almacenan las filas de los datos de la tabla o vista de acuerdo con los valores de la clave del índice. Estos valores clave son las columnas incluidas en la definición del índice. Solo puede haber un índice clúster por cada tabla, porque las filas de datos solo pueden estar almacenadas de una forma.
 La única ocasión en la que las filas de datos de una tabla están ordenadas es cuando la tabla contiene un índice clúster. Cuando una tabla tiene un índice clúster, la tabla se denomina tabla agrupada. Si una tabla no tiene un índice clúster, sus filas de datos están almacenadas en una estructura sin ordenar denominada montón.
 
-###Ventajas:<br>
+### Ventajas:<br>
 Las consultas que ordenan o filtran por la clave del índice agrupado suelen ser más rápidas porque las filas de datos ya están ordenadas según la clave del índice.
 
-###No agrupado<br>
+### No agrupado<br>
 Los índices no clúster tienen una estructura separada de las filas de datos. Un índice no clúster contiene los valores de clave de índice no clúster y cada entrada de valor de clave tiene un puntero a la fila de datos que contiene el valor clave.
 
 El puntero de una fila de índice no clúster hacia una fila de datos se denomina localizador de fila. La estructura del localizador de filas depende de si las páginas de datos están almacenadas en un montón o en una tabla agrupada. Si están en un montón, el localizador de filas es un puntero hacia la fila. Si están en una tabla agrupada, el localizador de fila es la clave de índice clúster.
 
 Puede agregar columnas sin clave al nivel hoja de un índice no agrupado con el fin de eludir los límites existentes para las claves de índice, así como para ejecutar consultas totalmente cubiertas. Para más información, vea Creación de índices con columnas incluidas. Para obtener más información sobre los límites para las claves de índice, consulte Especificaciones de capacidad máxima para SQL Server.
 
-###Ventajas:<br>
+### Ventajas:<br>
 Los índices no agrupados permiten crear varios índices en una tabla, lo que mejora la eficiencia en las consultas que no se benefician del índice agrupado.
 Pueden incluir columnas adicionales en el nivel hoja (columnas incluidas) para evitar los límites de las claves de índice y mejorar el rendimiento en consultas que requieren todas las columnas de la tabla.
 Tanto los índices clúster como los no clúster pueden ser únicos. Esto significa que con un índice único, dos filas no pueden tener el mismo valor para la clave de índice. De lo contrario, el índice no es único y varias filas pueden compartir el mismo valor de clave. Para más información, vea Creación de índices únicos.
 
 
-###Índices y restricciones<br>
+### Índices y restricciones<br>
 Los índices se crean automáticamente cuando las restricciones PRIMARY KEY y UNIQUE se definen en las columnas de tabla. Por ejemplo, cuando crea una tabla con una restricción UNIQUE, el motor de base de datos crea automáticamente un índice no agrupado. Si configura una restricción PRIMARY KEY, el motor de base de datos crea automáticamente un índice agrupado, a menos que ya exista uno. Cuando intenta aplicar una restricción PRIMARY KEY en una tabla existente y ya existe un índice agrupado en esa tabla, SQL Server aplica la clave principal mediante un índice no agrupado.
 
-###Observaciones:<br>
+### Observaciones:<br>
 ### CitasMedica (Sin indice)
 Rendimiento de la consulta sin índice agrupado: Al ejecutar la consulta sin índice,
 el motor de SQL Server tendrá que realizar un escaneo completo de la tabla, lo cual puede ser lento si la tabla tiene muchos registros.

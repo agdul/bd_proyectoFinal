@@ -165,3 +165,9 @@ El procedimiento almacenado también es rápido, manteniéndose casi a la par co
 **Conclusión:** La función escalar es considerablemente más lenta que las otras dos opciones, con tiempos de CPU y ejecución superiores a 900 ms y 1000 ms, respectivamente. Esto se debe a que SQL Server ejecuta la función en cada fila de forma individual, lo que genera una carga adicional significativa.<br>
 
 La función escalar es la más lenta de todas, con un impacto de rendimiento significativo. Esto se debe al hecho de que la función se evalúa para cada fila de manera individual, lo que aumenta el tiempo de ejecución.<br>
+
+## Conclusion: 
+
+Los procedimientos almacenados y las funciones en SQL Server son herramientas esenciales que mejoran la eficiencia y seguridad de las bases de datos. Ambos permiten centralizar el código, reutilizarlo y protegerlo contra ataques como la inyección SQL, gracias a su uso de parámetros.
+La principal diferencia es que los procedimientos pueden modificar datos directamente en la base de datos y no se pueden utilizar dentro de consultas SELECT. En cambio, las funciones siempre devuelven un valor (puede ser un único dato o una tabla) y se pueden usar dentro de consultas, lo que las hace ideales para cálculos y filtros.
+En general, los procedimientos son más adecuados para tareas complejas y operaciones que modifican datos, mientras que las funciones se utilizan mejor para obtener cálculos o resultados que se integren en consultas SQL sin cambiar el estado de la base. Ambos son clave para mejorar el rendimiento y la modularidad en la gestión de bases de datos.

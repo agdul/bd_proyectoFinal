@@ -14,11 +14,6 @@ Al tener datos de una misma columna juntos, se facilita la compresión de datos.
 ### Optimización para consultas de análisis
 Los índices columnares están diseñados para consultas de análisis (como SUM, AVG, COUNT, etc.) y consultas que necesitan procesar grandes volúmenes de datos
 
-## Conclusion 
-Los índices columnares son ideales para consultas donde se requiere acceder a ciertas columnas de una tabla y realizar análisis complejos, esto permite leer solo las columnas necesarias para la consulta, optimizando el rendimiento en análisis de datos y grandes volúmenes.
-
-La diferencia básica entre índices agrupados y no agrupados es que los registros de un índice agrupado están ordenados y almacenados de forma secuencial en función de su clave, lo que evita tener que hacer muchas lectura. Esto hace que las consultas sean más eficientes y rápidas cuando devuelven mas de un registro.
-
 ## Desarrollo del tema/Resultados 
 
 Como primera instancia realizamos la creación de la tabla de mayor ocurrencia del modelo de la tabla origen a y adaptándola a nuestras necesidades, la cuel se va a llamar CitasMedicaNew. El script utilizado para ello es el que se describe a continuación:
@@ -97,3 +92,7 @@ Con indices columnares <br>
 
 ![imagen 1 4](https://github.com/user-attachments/assets/cc15a1f4-2450-4cc3-8878-74012a55feca)
 
+## Conclusion 
+Los índices columnares son ideales para consultas donde se requiere acceder a ciertas columnas de una tabla y realizar análisis complejos, esto permite leer solo las columnas necesarias para la consulta, optimizando el rendimiento en análisis de datos y grandes volúmenes.
+
+La diferencia básica entre índices agrupados y no agrupados es que los registros de un índice agrupado están ordenados y almacenados de forma secuencial en función de su clave, lo que evita tener que hacer muchas lectura. Esto hace que las consultas sean más eficientes y rápidas cuando devuelven mas de un registro.

@@ -29,8 +29,8 @@ Tiempos de respuesta: Los tiempos de respuesta deberían disminuir considerablem
 y más aún con el índice cubierto que incluye las columnas seleccionadas.
 
 ##Conclusiones:<br>
-Crear un índice agrupado sobre la columna que filtras (como fecha_nacimiento) mejora la eficiencia de la consulta.
-Si puedes crear un índice cubierto, el rendimiento mejorará aún más, 
+AL crear un índice agrupado sobre una  columna, como fecha_nacimiento, mejora la eficiencia de la consulta.
+Pero si se  crea un índice utilizando mas columnas, el rendimiento mejorará aún más, 
 ya que SQL Server utilizará solo el índice para resolver la consulta sin tener que acceder a la tabla principal.
 
 

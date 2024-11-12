@@ -17,4 +17,29 @@ Un índice es una estructura de disco asociada con una tabla o una vista que ace
 ### CitasMedica (Sin indice) vs CitasMedicaNew (con indice agrupado por (fecha_citaMedica))
 ![img_prueba2_tema03](img/tema03_img_2.png)
 
+###Observaciones:<br>
+Rendimiento de la consulta sin índice agrupado: Al ejecutar la consulta sin índice,
+el motor de SQL Server tendrá que realizar un escaneo completo de la tabla, lo cual puede ser lento si la tabla tiene muchos registros.
+
+Mejora con el índice agrupado sobre fecha_nacimiento: 
+Crear un índice agrupado sobre fecha_nacimiento mejora el rendimiento de las consultas que filtran por esa columna, 
+ya que los datos estarán físicamente ordenados por esa columna, lo que permite un acceso más rápido.
+
+Mejora adicional con el índice agrupado que incluye las columnas seleccionadas: 
+Incluir las columnas adicionales en el índice agrupado mejora aún más el rendimiento, ya que cubre toda la consulta. 
+Esto significa que SQL Server no tiene que realizar una búsqueda adicional de datos en la tabla; 
+toda la información necesaria está contenida en el índice.
+
+Impacto de los planes de ejecución: El plan de ejecución mostrará cambios en la forma en que SQL Server accede a los datos.
+Con un índice agrupado, deberías ver que se está utilizando un índice de búsqueda más eficiente en lugar de un escaneo de tabla.
+
+Tiempos de respuesta: Los tiempos de respuesta deberían disminuir considerablemente después de crear el índice,
+y más aún con el índice cubierto que incluye las columnas seleccionadas.
+
+##Conclusiones:<br>
+Crear un índice agrupado sobre la columna que filtras (como fecha_nacimiento) mejora la eficiencia de la consulta.
+Si puedes crear un índice cubierto, el rendimiento mejorará aún más, 
+ya que SQL Server utilizará solo el índice para resolver la consulta sin tener que acceder a la tabla principal.*/ 
+
+
 ### CitasMedica (con indice agrupado por (fecha_citaMedica, id_mascota, id_veterinario)) vs CitasMedicaNew (con indice agrupado por (fecha_citaMedica))

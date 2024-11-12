@@ -1,9 +1,11 @@
 -- INSERT 1 millon de datos Cita medica tabla de mayor ocurrencia 
+-- Duplicar Mascotas ya creadas 
 
 --Ejecutar varias veces para tener un lote grande de mascotas 
 INSERT INTO Mascota (nombre_mascota, fecha_nacimiento, peso_mascota, condicion_mascota, id_dueno, id_raza)
 SELECT nombre_mascota, fecha_nacimiento, peso_mascota, condicion_mascota, id_dueno, id_raza
 FROM Mascota;
+
 
 --INICIO DE LA FUNCION DUPLICAR VET 
 -- Ejecutar varias veces para poder llegar al millon de insersiones en cita medica 
@@ -46,7 +48,7 @@ CREATE TABLE CitasMedicaNew
   CONSTRAINT FK_CitasMedicaNew_id_veterinario FOREIGN KEY (id_veterinario) REFERENCES Veterinario(id_veterinario)
 );
 
--- Carga masiva de datos 
+-- Carga masiva de datos en la tabla CitaMedicaNew
 INSERT INTO CitasMedicaNew (fecha_citaMedica, observaciones_citaMedica, usuario, motivo_visita, id_mascota, id_veterinario)
 SELECT TOP 1000000
   DATEADD(day, CAST(5000 * RAND(CHECKSUM(NEWID())) + 1 AS INT), '2010-01-01') AS fecha_citaMedica,
@@ -58,6 +60,19 @@ SELECT TOP 1000000
 FROM Mascota m
 JOIN Veterinario v ON 1 = 1;  -- Este JOIN asegura que tomas todos los id_veterinario disponibles
 
+
+
+-- Carga masiva de datos en la tabla CitaMedica
+INSERT INTO CitasMedica (fecha_citaMedica, observaciones_citaMedica, usuario, motivo_visita, id_mascota, id_veterinario)
+SELECT TOP 1000000
+  DATEADD(day, CAST(5000 * RAND(CHECKSUM(NEWID())) + 1 AS INT), '2010-01-01') AS fecha_citaMedica,
+  'Observación generada' AS observaciones_citaMedica,
+  SYSTEM_USER AS usuario,
+  'Consulta general' AS motivo_visita,
+  m.id_mascota AS id_mascota,  -- Selección de id_mascota válidos de la tabla Mascota
+  v.id_veterinario AS id_veterinario  -- Selección de id_veterinario válidos de la tabla Veterinario
+FROM Mascota m
+JOIN Veterinario v ON 1 = 1;  -- Este JOIN asegura que tomas todos los id_veterinario disponibles
 
 
 -- Contador de registro total

@@ -648,3 +648,18 @@ GROUP BY
 t.name
 
 ORDER BY row_count DESC; 
+
+
+-- Salida esperada : 
+
+-- Raza 52
+-- Especialidad 51
+-- Especie 50
+-- Laboratorio 50
+-- Mascota 50
+-- Tratamiento 50
+-- Tratamiento medico 50
+-- Veterinario 50
+-- CitasMedica 50
+-- dueno 50
+-- Medicamento 45

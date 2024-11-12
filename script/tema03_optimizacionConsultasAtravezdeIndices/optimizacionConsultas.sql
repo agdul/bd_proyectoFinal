@@ -15,7 +15,7 @@ WHERE fecha_citaMedica BETWEEN '2012-01-01' AND '2024-12-31';
 -- SET STATISTICS TIME OFF;
 -- SET STATISTICS PROFILE OFF;
 
--- el siguiente script es para saber si un indice existe
+-- el siguiente script es para saber si tiene un indice existe
 SELECT name 
 FROM sys.indexes 
 WHERE object_id = OBJECT_ID('CitasMedicaNew') 

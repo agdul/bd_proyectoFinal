@@ -10,9 +10,15 @@ WHERE object_id = OBJECT_ID('CitasMedicaNew')
   AND is_unique = 0;
 -----------------------------------------------------------------------------------------------
 --Elimina el indice IDX_gastoNEW de la tabla gastoNew
-DROP INDEX Columnar_CitasMedicaNew ON CitasMedicaNew; 
+DROP INDEX IX_Columnar_CitasMedicaNew ON CitasMedicaNew; 
 
 --INDICE AGRUPADO CLUESTER
-CREATE COLUMNSTORE INDEX IX_Columnar_CitasMedicaNew ON CitasMedicaNew (fecha_citaMedica);
 
+CREATE CLUSTERED INDEX IX_Columnar_CitasMedicaNew ON CitasMedicaNew (fecha_citaMedica);
+
+--INDICE AGRUPADO CLUESTER
+CREATE COLUMNSTORE INDEX IX_Columnar_CitasMedicaNew ON CitasMedica (fecha_citaMedica, id_mascota, id_veterinario);
+
+--Elimina el indice IDX_gastoNEW de la tabla gastoNew
+DROP INDEX IX_Columnar_CitasMedicaNew ON CitasMedicaNew; 
 -------------------------------------------------------------------------------------------------

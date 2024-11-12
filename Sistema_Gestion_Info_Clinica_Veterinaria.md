@@ -20,7 +20,7 @@
 - [Capítulo I: Introducción](#capítulo-i-introducción)
 - [Capítulo II: Marco Conceptual o Referencial](#capítulo-ii-marco-conceptual-o-referencial)
 - [Capítulo III: Metodología](#capítulo-iii-metodología)
-- [Capítulo IV: Desarrollo del Tema/Resultados](#capítulo-iv-desarrollo-del-temaresultados)
+- [Capítulo IV: Desarrollo del Tema/Resultados](#capítulo-iv-desarrollo-del-tema)
 - [Capítulo V: Conclusiones](#capítulo-v-conclusiones)
 - [Capítulo VI: Bibliografía](#capítulo-vi-bibliografía)
 
@@ -151,7 +151,7 @@ Para llevar a cabo este proyecto, utilizamos una variedad de herramientas que fa
 
 
 
-## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS
+## CAPÍTULO IV: DESARROLLO DEL TEMA
 
 ### Diseño del modelo relacional para el sistema: Gestión Veterinaria.<br>
 Este modelo captura la estructura básica de un sistema para registrar información sobre dueños, mascotas, citas veterinarias, tratamientos y medicamentos utilizado en la clínica veterinaria.

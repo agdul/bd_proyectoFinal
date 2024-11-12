@@ -1,6 +1,6 @@
 # TEMA 2 : Procedimientos y Funciones Almacenadas
 
-## **Procedimientos Almacenados** <br>
+## **Procedimientos Almacenados**USE gestion_veterinaria; <br>
 Un procedimiento almacenado en SQL Server es un conjunto de instrucciones SQL o una referencia a un método .NET CLR, similar a funciones en otros lenguajes de programación. Los procedimientos almacenados permiten: <br>
 -- Aceptar parámetros de entrada y salida. <br>
 -- Incluir instrucciones de programación y llamadas a otros procedimientos.<br>

@@ -190,11 +190,21 @@ Los índices columnares son una estructura de datos utilizada en bases de datos 
 
 > Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> Indices Columnares](script/tema04_indicesColumnares)
 
-## CAPÍTULO V: CONCLUSIONES
+## CAPÍTULO V: CONCLUSIONES 
 
-Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vitae pharetra lacus. Nunc finibus, tellus et dictum semper, nisi sem accumsan ligula, et euismod quam ex a tellus. 
+A lo largo de este proyecto, hemos explorado diversas técnicas y herramientas para optimizar el rendimiento y la seguridad en SQL Server. Una de las estrategias más efectivas que implementamos fue la creación de índices, tanto agrupados como columnares, lo que demostró mejoras significativas en la eficiencia de las consultas. Un índice agrupado sobre una columna clave, como fecha_nacimiento, agiliza las búsquedas al organizar los datos secuencialmente. Aún más, la creación de índices compuestos permite a SQL Server resolver consultas complejas sin necesidad de acceder a la tabla completa, optimizando así el rendimiento general.
 
+Por otro lado, los índices columnares demostraron ser fundamentales en escenarios de análisis de grandes volúmenes de datos, ya que permiten un acceso selectivo a las columnas necesarias, lo que redunda en tiempos de respuesta mucho más rápidos para consultas analíticas.
 
+En cuanto al uso de procedimientos almacenados y funciones, aprendimos que ambas herramientas son esenciales para mantener la modularidad y seguridad del código. Los procedimientos son ideales para realizar tareas complejas que implican modificaciones en la base de datos, mientras que las funciones resultan muy útiles para realizar cálculos y filtros dentro de consultas, sin alterar el estado de la base de datos. Esta diferenciación nos permitió optimizar tanto la gestión de datos como la ejecución de consultas en diferentes escenarios.
+
+Finalmente, las pruebas realizadas sobre la gestión de permisos pusieron en evidencia la importancia de un control adecuado de acceso. Identificamos cómo los distintos roles y permisos influyen en la seguridad de la base de datos, permitiendo a los administradores un control granular sobre las operaciones que cada usuario puede realizar. Esto refuerza la integridad y la seguridad de los datos, previniendo accesos no autorizados.
+
+### Reflexión sobre la experiencia de trabajo en equipo
+
+Este proyecto fue, sin duda, una experiencia enriquecedora, especialmente porque se llevó a cabo en grupo. La colaboración entre todos los miembros fue clave para lograr un análisis exhaustivo y obtener resultados sólidos. El trabajo en equipo nos permitió combinar diferentes enfoques y conocimientos, lo que enriqueció la calidad de las soluciones implementadas. Además, compartir ideas, discutir enfoques y superar juntos los desafíos fue una parte fundamental del proceso.
+
+Cada uno aportó su perspectiva única, lo que no solo mejoró el resultado final, sino que también nos permitió aprender unos de otros. Hubo momentos de debate intenso, risas y descubrimientos, lo que hizo que esta experiencia fuera no solo productiva, sino también gratificante a nivel personal y profesional. En definitiva, este proyecto nos mostró el valor de la colaboración y el aprendizaje compartido, dejando claro que el trabajo en equipo no solo divide las tareas, sino que multiplica los logros.
 
 ## CAPÍTULO VI: BIBLIOGRAFÍA
 

@@ -106,6 +106,8 @@ El resultado de la operación es un cálculo o transformación que no necesita m
 ### Operacion Directa vs Procedimiento vs Funcion Almacenada<br>
  ![tema02-img7](img/tema02-img7.png)
 
+ La salida de esa consulta fue : 
+
 
  ```  SQL Server Execution Times:
    CPU time = 38 ms,  elapsed time = 54 ms.
@@ -133,3 +135,27 @@ Table 'Mascota'. Scan count 1, logical reads 357, physical reads 0, page server 
  SQL Server Execution Times:
    CPU time = 914 ms,  elapsed time = 1052 ms.
 Total execution time: 00:00:01.159
+
+```
+Con base en los tiempos de ejecución y las lecturas lógicas registradas, analicemos y comparemos entre las tres formas de cálculo de la edad que definimos :
+
+
+### Consulta Directa <br>
+**CPU time:** 38 ms<br>
+**Elapsed time:** 54 ms<br>
+**Logical Reads:** No especificado (pero probablemente similar a las siguientes)<br>
+**Conclusión:** Esta consulta directa es la más rápida en términos de tiempo de CPU y tiempo total de ejecución, con tiempos de CPU y ejecución mucho menores.<br>
+
+### Procedimiento Almacenado<br>
+**CPU time:** 37 ms<br>
+**Elapsed time:** 38 ms<br>
+**Logical Reads:** 357 (en la tabla Mascota)<br>
+**Filas afectadas:** 51,206<br>
+**Conclusión:** Aunque el procedimiento almacenado parece un poco más lento en la segunda ejecución (probablemente por optimización de caché o el proceso de compilación inicial), sigue siendo eficiente, con tiempos muy bajos comparables a la consulta directa.<br>
+
+### Función Escalar
+**CPU time:** 914 ms
+**Elapsed time:** 1052 ms
+**Logical Reads:** 357
+**Filas afectadas:** 51,206
+**Conclusión:** La función escalar es considerablemente más lenta que las otras dos opciones, con tiempos de CPU y ejecución superiores a 900 ms y 1000 ms, respectivamente. Esto se debe a que SQL Server ejecuta la función en cada fila de forma individual, lo que genera una carga adicional significativa.

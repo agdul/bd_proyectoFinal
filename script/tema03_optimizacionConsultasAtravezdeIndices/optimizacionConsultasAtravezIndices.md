@@ -23,7 +23,7 @@ Mejora adicional con el índice agrupado que incluye las columnas seleccionadas:
 Incluir las columnas adicionales en el índice agrupado mejora aún más el rendimiento, ya que cubre toda la consulta. 
 Esto significa que SQL Server no tiene que realizar una búsqueda adicional de datos en la tabla; 
 toda la información necesaria está contenida en el índice.
-![Con Indice varias columnas](img/tiempo_con_indice_varias_columnas.JPG.JPG)
+![Con Indice varias columnas](img/tiempo_con_indice_varias_columnas.JPG)
 ![Con Indice varias columnas](img/consulta3.JPG)
 
 Impacto de los planes de ejecución: El plan de ejecución mostrará cambios en la forma en que SQL Server accede a los datos.

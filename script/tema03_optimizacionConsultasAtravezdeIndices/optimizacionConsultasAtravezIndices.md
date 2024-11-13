@@ -16,12 +16,12 @@ Los índices no clúster tienen una estructura separada de las filas de datos. U
 
 El puntero de una fila de índice no clúster hacia una fila de datos se denomina localizador de fila. La estructura del localizador de filas depende de si las páginas de datos están almacenadas en un montón o en una tabla agrupada. Si están en un montón, el localizador de filas es un puntero hacia la fila. Si están en una tabla agrupada, el localizador de fila es la clave de índice clúster.
 
-Puede agregar columnas sin clave al nivel hoja de un índice no agrupado con el fin de eludir los límites existentes para las claves de índice, así como para ejecutar consultas totalmente cubiertas. Para más información, vea Creación de índices con columnas incluidas. Para obtener más información sobre los límites para las claves de índice, consulte Especificaciones de capacidad máxima para SQL Server.
+Puede agregar columnas sin clave al nivel hoja de un índice no agrupado con el fin de eludir los límites existentes para las claves de índice, así como para ejecutar consultas totalmente cubiertas. Para más información, vea Creación de índices con columnas incluidas.
 
 ### Ventajas:<br>
 Los índices no agrupados permiten crear varios índices en una tabla, lo que mejora la eficiencia en las consultas que no se benefician del índice agrupado.
 Pueden incluir columnas adicionales en el nivel hoja (columnas incluidas) para evitar los límites de las claves de índice y mejorar el rendimiento en consultas que requieren todas las columnas de la tabla.
-Tanto los índices clúster como los no clúster pueden ser únicos. Esto significa que con un índice único, dos filas no pueden tener el mismo valor para la clave de índice. De lo contrario, el índice no es único y varias filas pueden compartir el mismo valor de clave. Para más información, vea Creación de índices únicos.
+Tanto los índices clúster como los no clúster pueden ser únicos. Esto significa que con un índice único, dos filas no pueden tener el mismo valor para la clave de índice. De lo contrario, el índice no es único y varias filas pueden compartir el mismo valor de clave.
 
 
 ### Índices y restricciones<br>

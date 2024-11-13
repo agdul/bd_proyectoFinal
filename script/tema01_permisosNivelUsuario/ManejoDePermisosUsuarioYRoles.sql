@@ -28,6 +28,8 @@ ALTER ROLE db_owner ADD MEMBER admin_usuario;
 --Esto le permite realizar consultas SELECT, pero no puede modificar los datos.
 ALTER ROLE db_datareader ADD MEMBER lectura_usuario;
 
+--Para inserta, eliminar y actualizar 
+ALTER ROLE db_datawriter ADD MEMBER lectura_usuario;
 
 -- Crear el procedimiento almacenado:
 
@@ -62,10 +64,11 @@ GRANT EXECUTE ON InsertarDueno TO lectura_usuario;
 --Manejo de permisos a nivel de Rol
 
 -- Crear los usuarios
-CREATE LOGIN user_role1 WITH PASSWORD = 'RoleUser123';
-CREATE LOGIN user_role2 WITH PASSWORD = 'RoleUser456';
 CREATE USER user_role1 FOR LOGIN user_role1;
+CREATE LOGIN user_role1 WITH PASSWORD = 'RoleUser123';
+
 CREATE USER user_role2 FOR LOGIN user_role2;
+CREATE LOGIN user_role2 WITH PASSWORD = 'RoleUser456';
 
 --  crear un rol con permisos de solo lectura sobre la tabla dueno.
 CREATE ROLE RolSoloLectura;

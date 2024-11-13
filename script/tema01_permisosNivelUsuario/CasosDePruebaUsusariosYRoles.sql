@@ -14,6 +14,14 @@ select *from dueno where nombre_dueno = 'pedro'
 INSERT INTO dueno (nombre_dueno, apellido_dueno, dni_dueno, telefono_dueno, email_dueno, direccion_dueno)
 VALUES ('Ana', 'Garcia', '87654321', 9876543210, 'ana.garcia@mail.com', 'Avenida 456');
 
+EXEC InsertarDueno 
+  @nombre_dueno = 'Ana',
+  @apellido_dueno = 'Garcia',
+  @dni_dueno = '87654321',
+  @telefono_dueno = 9876543210,
+  @email_dueno = 'ana.garcia@mail.com',
+  @direccion_dueno = 'Avenida 456';
+
 
 --Este usuario puede ejecutar el procedimiento, ya que se le otorgó el permiso de ejecución, pero no podrá realizar INSERT 
 --directamente en la tabla.
@@ -22,8 +30,5 @@ EXEC ObtenerDuenoPorDNI @dni = '12345678';
 
 --Casos de prueba para manejo de permisos a nivel de rol
 
--- Conectar como user_role2
 SELECT * FROM dueno;
 
--- Conectar como user_role1
-SELECT * FROM dueno; 

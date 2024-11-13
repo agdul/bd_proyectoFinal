@@ -11,12 +11,12 @@ GO
 --Crear Usuario:
 
 ---Crear el usuario admin_usuario---
-CREATE LOGIN admin_usuario WITH PASSWORD = 'Admin1234';
 CREATE USER admin_usuario FOR LOGIN admin_usuario;
+CREATE LOGIN admin_usuario WITH PASSWORD = 'Admin1234';
 
 ---Crear el usuario lectura_usuario---
-CREATE LOGIN lectura_usuario WITH PASSWORD = 'Lectura1234';
 CREATE USER lectura_usuario FOR LOGIN lectura_usuario;
+CREATE LOGIN lectura_usuario WITH PASSWORD = 'Lectura1234';
 
 --Asignar permisos:
 
@@ -30,6 +30,7 @@ ALTER ROLE db_datareader ADD MEMBER lectura_usuario;
 
 
 -- Crear el procedimiento almacenado:
+
 CREATE PROCEDURE ObtenerDuenoPorDNI
     @dni VARCHAR(8)
 AS
@@ -39,8 +40,23 @@ BEGIN
     WHERE dni_dueno = @dni;
 END; 
 
+CREATE PROCEDURE InsertarDueno
+    @nombre_dueno VARCHAR(50),
+    @apellido_dueno VARCHAR(50),
+    @dni_dueno VARCHAR(8),
+    @telefono_dueno BIGINT,
+    @email_dueno VARCHAR(50),
+    @direccion_dueno VARCHAR(50)
+AS
+BEGIN
+    INSERT INTO Dueno (nombre_dueno, apellido_dueno, dni_dueno, telefono_dueno, email_dueno, direccion_dueno)
+    VALUES (@nombre_dueno, @apellido_dueno, @dni_dueno, @telefono_dueno, @email_dueno, @direccion_dueno);
+END;
+
 -- otorgamos el permiso de ejecución del procedimiento al usuario lectura_usuario:
 GRANT EXECUTE ON ObtenerDuenoPorDNI TO lectura_usuario;
+
+GRANT EXECUTE ON InsertarDueno TO lectura_usuario;
 
 
 --Manejo de permisos a nivel de Rol
